@@ -5,7 +5,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import { setCurrentDrivers } from "../store/features/drivers";
 import SingleRow from "./SingleRow";
 import SearchInput from "./SearchInput";
-import Filter from "./Filter";
 
 export default function Table({drivers}){
   const dispatch=useDispatch()
