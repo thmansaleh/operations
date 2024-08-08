@@ -1,6 +1,9 @@
 import React from 'react'
+import { swrReportsToday } from '../swr/reportsToday'
 
 function Table() {
+  const { data ,isLoading } = swrReportsToday()
+if(isLoading) return 'loading'
   return (
 <div className="relative overflow-auto max-h-svh  shadow-md ">
   <table className="w-full text-sm text-center  text-gray-500 ">
@@ -34,32 +37,35 @@ function Table() {
       </tr>
     </thead>
     <tbody>
-    {[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,11,1].map(e=>{
+    {data.map(report=>{
         return   <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
         <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-        23973923982
+        {report.report_no}
         </th>
     
         <td className="px-6 py-4">
-          تحم2
+        {report.source_name}
         </td>
         <td className="px-6 py-4">
-          مركبة عطلانة
+        {report.type}
         </td>
         <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-21
+        {report.nida}
+
         </td>
         <td className="px-6 py-4">
-22:12
+        {report.start}
         </td>
         <td className="px-6 py-4">
-22:12
+        {report.arrive}
         </td>
         <td className="px-6 py-4">
-22:12
+        {report.finish}
         </td>
         <td className="px-6 py-4">
-يقيد انه موجود داخل المركبة        </td>
+        {report.report_no}
+        {report.note_police}
+    </td>
       </tr>
     })}
      
