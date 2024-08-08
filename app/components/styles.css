@@ -1,0 +1,3 @@
+.tabs:checked + label >a{
+background: red !important;
+}
