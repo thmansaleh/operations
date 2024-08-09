@@ -63,7 +63,6 @@ if(isLoading) return 'loading'
         {report.finish}
         </td>
         <td className="px-6 py-4">
-        {report.report_no}
         {report.note_police}
     </td>
       </tr>

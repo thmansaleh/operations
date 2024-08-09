@@ -55,7 +55,7 @@ const deleteDriver=()=>{
  
 {drivers.length>0?<div className=" rounded-lg p-2 space-y-5">
   {drivers.map(e=>{
-    return <div  className="flex items-center gap-x-3">
+    return <div  key={e.job_id} className="flex items-center gap-x-3">
     <div className="flex-1">{e.name}</div>
     <Button  onClick={()=>addDriver(e.job_id)} size="xs" color="warning" >
         اضافة
@@ -68,7 +68,7 @@ const deleteDriver=()=>{
 {car.match_found?<>
 <div>
 {JSON.parse(car.drivers).map(driver=>{
-    return      <div  className="flex items-center gap-x-3">
+    return      <div key={driver.job_id}  className="flex items-center gap-x-3">
     <div className="flex-1 bg-green-600 text-white rounded-lg p-1 text-sm">{driver.name}</div>
     <Button onClick={deleteDriver} size="xs" color="failure" >
         حذف

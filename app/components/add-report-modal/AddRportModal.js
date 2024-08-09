@@ -9,27 +9,35 @@ import Times from "./Times";
 import Nida from "./Nida";
 import SaveBtn from "./SaveBtn";
 import { addReport } from "@/app/store/features/reports";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import StreetName from "./StreetName";
 
 
-export default function AddReportModal({carNida,page}) {
+export default function AddReportModal({page,value}) {
   const [openModal, setOpenModal] = useState(false);
+  const modalDispaly =useSelector(state=>state.reports.modalDispaly)
   const dispatch=useDispatch()
 
 
   return (
     <>
-      <Button gradientMonochrome="info" onClick={() => setOpenModal(true)} className="m-3  ">
-      <svg className="w-7 h-7 mx-1" stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="200px" width="200px" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"></path></svg>
-      اضافة حدث
-  </Button>
-      <Modal size='2xl' show={openModal} onClose={() => setOpenModal(false)}>
+    <Button onClick={() =>
+    {
+      if(page=='cars') dispatch(addReport({action:'nida',data:value}))
+     dispatch(addReport({action:'modalDispaly',data:true}))
+      //  setOpenModal(true)
+      
+    } 
+    }
+       size="xs" gradientMonochrome="teal">اضافة حدث</Button>
+
+      <Modal size='2xl' show={modalDispaly} onClose={() =>      dispatch(addReport({action:'modalDispaly',data:false}))
+}>
         <Modal.Header ></Modal.Header>
         <Modal.Body>
         <div className=" flex gap-y-4 justify-center flex-col items-center">
 
-<Nida/>
+<Nida page={page} value={value}/>
   <div className="flex justify-center items-center gap-x-4" >
 <Sources/>
 <ReportTypes/>

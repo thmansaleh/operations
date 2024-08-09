@@ -4,9 +4,8 @@ import { createSlice } from '@reduxjs/toolkit';
 const reports= createSlice({
   name: 'reports',
   initialState: {
-    phones:true,
-    borders:true,
-    color:false,
+    modalDispaly:false,
+   
     addReport:{
         nida:null,
         reportNo:null,
@@ -56,6 +55,9 @@ const reports= createSlice({
   
         case 'note':
             state.addReport.note=action.payload.data
+            break;
+        case 'modalDispaly':
+            state.modalDispaly=action.payload.data
             break;
       
         default:

@@ -10,6 +10,7 @@ function Cars() {
  if(data) return <div className="space-y-4 p-3 max-h-svh overflow-y-auto">
     {data.sort((a,b)=>a.nida - b.nida).map(car=>{
         // console.log(JSON.parse(car.drivers))
+        console.log(car.nida)
         return <div  className="bg-gray-200 rounded-lg p-3 flex gap-x-4 items-center" key={car.id}> 
 
  <AddDriver car={car}/>
@@ -21,8 +22,7 @@ function Cars() {
     
 })}
 </div>
-<Button size="xs" gradientMonochrome="teal">اضافة حدث</Button>
-     <AddReportModal page='cars' carNida={car.nida}/>
+     <AddReportModal page='cars' value={car.nida}/>
 
 
 </>

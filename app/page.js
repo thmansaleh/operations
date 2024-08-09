@@ -1,7 +1,9 @@
 
 'use cient'
 
-export default function Home() {
-  return <div>
-home  </div>
+import Home from "./home/Home"
+
+export default function page() {
+  return  <Home/>
+
 }
