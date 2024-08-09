@@ -1,5 +1,8 @@
 .tabs:checked + label >div{
-background: red !important;
+background: black !important;
+}
+.tabs:checked + label >div>div{
+color: white !important;
 }
 .tabs:checked + label >div>svg{
 fill: white;

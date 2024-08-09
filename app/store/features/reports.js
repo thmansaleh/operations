@@ -5,6 +5,7 @@ const reports= createSlice({
   name: 'reports',
   initialState: {
     modalDispaly:false,
+    page:null,
    
     addReport:{
         nida:null,
@@ -58,6 +59,24 @@ const reports= createSlice({
             break;
         case 'modalDispaly':
             state.modalDispaly=action.payload.data
+            break;
+        case 'page':
+            state.page=action.payload.data
+            break;
+        case 'new':
+            state.addReport={
+                nida:null,
+                reportNo:null,
+                sourceId:null,
+                typeId:null,
+                start:null,
+                arrive:null,
+                finish:null,
+                streetId:null,
+                description:null,
+                note:null,
+        
+            }
             break;
       
         default:

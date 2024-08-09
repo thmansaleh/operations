@@ -13,7 +13,7 @@ import { useDispatch, useSelector } from "react-redux";
 import StreetName from "./StreetName";
 
 
-export default function AddReportModal({page,value}) {
+export default function AddReportModal() {
   const [openModal, setOpenModal] = useState(false);
   const modalDispaly =useSelector(state=>state.reports.modalDispaly)
   const dispatch=useDispatch()
@@ -21,7 +21,7 @@ export default function AddReportModal({page,value}) {
 
   return (
     <>
-    <Button onClick={() =>
+    {/* <Button onClick={() =>
     {
       if(page=='cars') dispatch(addReport({action:'nida',data:value}))
      dispatch(addReport({action:'modalDispaly',data:true}))
@@ -29,7 +29,7 @@ export default function AddReportModal({page,value}) {
       
     } 
     }
-       size="xs" gradientMonochrome="teal">اضافة حدث</Button>
+       size="xs" gradientMonochrome="teal">اضافة حدث</Button> */}
 
       <Modal size='2xl' show={modalDispaly} onClose={() =>      dispatch(addReport({action:'modalDispaly',data:false}))
 }>
@@ -37,7 +37,7 @@ export default function AddReportModal({page,value}) {
         <Modal.Body>
         <div className=" flex gap-y-4 justify-center flex-col items-center">
 
-<Nida page={page} value={value}/>
+<Nida />
   <div className="flex justify-center items-center gap-x-4" >
 <Sources/>
 <ReportTypes/>

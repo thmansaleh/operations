@@ -5,7 +5,7 @@ function Table() {
   const { data ,isLoading } = swrReportsToday()
 if(isLoading) return 'loading'
   return (
-<div className="relative overflow-auto max-h-svh  shadow-md ">
+<div className="    shadow-md ">
   <table className="w-full text-sm text-center  text-gray-500 ">
     <thead className="text-xs text-white uppercase bg-gray-600 ">
       <tr>
@@ -38,7 +38,7 @@ if(isLoading) return 'loading'
     </thead>
     <tbody>
     {data.map(report=>{
-        return   <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+        return   <tr className="  border-b">
         <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
         {report.report_no}
         </th>

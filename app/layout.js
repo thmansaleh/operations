@@ -10,7 +10,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html dir="rtl" lang="ar">
-      <body className="fixed inset-0">
+      <body className="">
 <ProviderPage children={children}/>
 
   
