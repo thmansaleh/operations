@@ -6,6 +6,7 @@ import { useState } from "react";
 import { swrDrivers } from "../swr/drivers";
 import { swrCars } from "../swr/cars";
 import { addToCarsHistory } from "../addToCarsHistory";
+import { deleteUserFromCarsHistory } from "../services/deleteUserFromCarsHistory";
 
 
 export default function AddDriver({car}) {
@@ -33,13 +34,17 @@ const addDriver=async (jobId)=>{
   await addToCarsHistory(car.nida,jobId)
   mutate()
   setOpenModal(false)
+
   // console.log(car.name,jobId)
 }
 
 
-const deleteDriver=()=>{
+const deleteDriver=async(jobId)=>{
+  // console.log(id)
+ await deleteUserFromCarsHistory(jobId)
+ setOpenModal(false)
+ mutate()
 
-  console.log(data)
 }
   return (
     <>
@@ -70,7 +75,7 @@ const deleteDriver=()=>{
 {JSON.parse(car.drivers).map(driver=>{
     return      <div key={driver.job_id}  className="flex items-center gap-x-3">
     <div className="flex-1 bg-green-600 text-white rounded-lg p-1 text-sm">{driver.name}</div>
-    <Button onClick={deleteDriver} size="xs" color="failure" >
+    <Button onClick={()=>deleteDriver(driver.job_id)} size="xs" color="failure" >
         حذف
       </Button>
   </div>

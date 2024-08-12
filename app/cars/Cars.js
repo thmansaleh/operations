@@ -4,6 +4,8 @@ import AddDriver from "./AddDriver"
 import AddReportModal from "../components/add-report-modal/AddRportModal"
 import { useDispatch } from "react-redux"
 import { addReport } from "../store/features/reports"
+import InformationBtn from "./InformationBtn"
+import AddReportBtn from "./AddReportBtn"
 
 function Cars() {
     const dispatch =useDispatch()
@@ -22,16 +24,10 @@ function Cars() {
     
 })}
 </div>
-     {/* <AddReportModal page='cars' value={car.nida}/> */}
-     <Button onClick={ ()=>{
-         dispatch(addReport({action:'new'}))
-         dispatch(addReport({action:'page',data:'cars'}))
-         dispatch(addReport({action:'nida',data:car.nida}))
-         dispatch(addReport({action:'modalDispaly',data:true}))
-    }
-} gradientMonochrome="info" size='xs'>اضافة حدث</Button>
+<AddReportBtn car={car}/>
 
 
+<InformationBtn/>
 
 
 </>
