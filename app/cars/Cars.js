@@ -6,11 +6,13 @@ import { useDispatch } from "react-redux"
 import { addReport } from "../store/features/reports"
 import InformationBtn from "./InformationBtn"
 import AddReportBtn from "./AddReportBtn"
+import SpinnerLoading from "../components/SpinnerLoading"
 
 function Cars() {
     const dispatch =useDispatch()
     const { data , error, isLoading } = swrCars()
- if(isLoading) return <div>جاري التحميل</div>
+ if(isLoading) return <SpinnerLoading/>
+
  if(data) return <div className="space-y-4 p-3 max-h-svh overflow-y-auto">
     {data.sort((a,b)=>a.nida - b.nida).map(car=>{
         return <div  className="bg-gray-200 rounded-lg p-3 flex gap-x-4 items-center" key={car.id}> 

@@ -1,11 +1,13 @@
 import { addReport } from "@/app/store/features/reports"
 import { swrStreets } from "@/app/swr/streets"
 import { useState } from "react"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 
 function StreetName() {
     const dispatch=useDispatch()
     const { data ,isLoading } = swrStreets()
+    const report =useSelector(state=>state.reports.addReport)
+
     const [streets,setStreets]=useState([])
     const [streetName,setStreetName]=useState()
 if(isLoading) return 'loading'
@@ -38,7 +40,6 @@ return <div className="flex gap-x-3">
     {streets.map(street=>{
         return     <div onClick={e=>{
             dispatch(addReport({action:'streetId',data:street.id}))
-            console.log(street.id)
             setStreetName(street.street_name)
             setStreets([])
         }
@@ -47,7 +48,7 @@ return <div className="flex gap-x-3">
     })}
   </div>}
 </div>
-<input onChange={e=>dispatch(addReport({action:'description',data:e.target.value}))} type="text" className="focus:ring-gray-800 focus:border-gray-800 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  w-full p-2.5  text-center" placeholder="الوصف" />
+<input  value={report.description} onChange={e=>dispatch(addReport({action:'description',data:e.target.value}))} type="text" className="focus:ring-gray-800 focus:border-gray-800 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  w-full p-2.5  text-center" placeholder="الوصف" />
 </div>
 }
 

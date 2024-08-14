@@ -16,6 +16,8 @@ import StreetName from "./StreetName";
 export default function AddReportModal() {
   const [openModal, setOpenModal] = useState(false);
   const modalDispaly =useSelector(state=>state.reports.modalDispaly)
+  const report =useSelector(state=>state.reports.addReport)
+  console.log('reoofe stat ', report)
   const dispatch=useDispatch()
 
 
@@ -46,7 +48,7 @@ export default function AddReportModal() {
 
 <Times/>
 
-  <input onChange={e=>dispatch(addReport({action:'note',data:e.target.value}))} type="text" className=" focus:ring-gray-800 focus:border-gray-800 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  w-1/2 p-2.5  text-center" placeholder="الملاحظات" />
+  <input value={report.note} onChange={e=>dispatch(addReport({action:'note',data:e.target.value}))} type="text" className=" focus:ring-gray-800 focus:border-gray-800 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  w-1/2 p-2.5  text-center" placeholder="الملاحظات" />
 
 </div>        </Modal.Body>
         <Modal.Footer>

@@ -1,9 +1,11 @@
 import React from 'react'
 import { swrReportsToday } from '../swr/reportsToday'
+import EditBtn from './EditBtn'
+import SpinnerLoading from '../components/SpinnerLoading'
 
 function Table() {
   const { data ,isLoading } = swrReportsToday()
-if(isLoading) return 'loading'
+if(isLoading) return <SpinnerLoading/>
   return (
 <div className="    shadow-md ">
   <table className="w-full text-sm text-center  text-gray-500 ">
@@ -33,6 +35,9 @@ if(isLoading) return 'loading'
         </th>
         <th scope="col" className="px-6 py-3">
           ملاحظات
+        </th>
+        <th scope="col" className="px-6 py-3">
+          
         </th>
       </tr>
     </thead>
@@ -64,6 +69,12 @@ if(isLoading) return 'loading'
         </td>
         <td className="px-6 py-4">
         {report.note_police}
+    </td>
+        <td className="px-6 py-4">
+        {report.note_police}
+        <div>
+          <EditBtn report={report}/>
+        </div>
     </td>
       </tr>
     })}

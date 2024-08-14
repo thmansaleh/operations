@@ -8,6 +8,7 @@ const reports= createSlice({
     page:null,
    
     addReport:{
+        id:null,
         nida:null,
         reportNo:null,
         sourceId:null,
@@ -18,6 +19,9 @@ const reports= createSlice({
         streetId:null,
         description:null,
         note:null,
+        period:null,
+ 
+    
 
     }
 },
@@ -64,19 +68,7 @@ const reports= createSlice({
             state.page=action.payload.data
             break;
         case 'new':
-            state.addReport={
-                nida:null,
-                reportNo:null,
-                sourceId:null,
-                typeId:null,
-                start:null,
-                arrive:null,
-                finish:null,
-                streetId:null,
-                description:null,
-                note:null,
-        
-            }
+            state.addReport=action.payload.data
             break;
       
         default:
