@@ -7,3 +7,10 @@ color: white !important;
 .tabs:checked + label >div>svg{
 fill: white;
 }
+
+
+  
+  *::-webkit-scrollbar {
+    display: none; /* WebKit browsers (Chrome, Safari) */
+  }
+  

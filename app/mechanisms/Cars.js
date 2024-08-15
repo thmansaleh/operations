@@ -7,7 +7,6 @@ import { addReport } from "../store/features/reports"
 import InformationBtn from "./InformationBtn"
 import AddReportBtn from "./AddReportBtn"
 import SpinnerLoading from "../components/SpinnerLoading"
-import CarDetails from "./CarDetails"
 
 function Cars() {
     const dispatch =useDispatch()
@@ -16,7 +15,7 @@ function Cars() {
 
  if(data) return <div className="space-y-4 p-3 max-h-svh overflow-y-auto">
     {data.sort((a,b)=>a.nida - b.nida).map(car=>{
-      if(car.type=='patrol')  return <div  className="bg-gray-200 rounded-lg p-3 flex gap-x-4 items-center" key={car.id}> 
+  if(car.type!='patrol') return <div  className="bg-gray-200 rounded-lg p-3 flex gap-x-4 items-center" key={car.id}> 
 
  <AddDriver car={car}/>
 
@@ -30,8 +29,7 @@ function Cars() {
 <AddReportBtn car={car}/>
 
 
-{/* <InformationBtn/> */}
-<CarDetails car={car}/>
+<InformationBtn/>
 
 
 </>

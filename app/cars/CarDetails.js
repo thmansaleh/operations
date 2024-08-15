@@ -1,0 +1,56 @@
+
+"use client";
+
+import { Button, Modal, Tooltip } from "flowbite-react";
+import { useState } from "react";
+import CarReports from "./CarReports";
+import Location from "./Location";
+
+export default function CarDetails({car}) {
+  const [openModal, setOpenModal] = useState(false);
+
+  return (
+    <>
+      <Tooltip content="تفاصيل الدورية">
+
+<svg  onClick={() => setOpenModal(true)} className='w-6 h-6 fill-gray-600' stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 20 20" aria-hidden="true" height="200px" width="200px" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+</Tooltip>
+      {/* <Button onClick={() => setOpenModal(true)}>Toggle modal</Button> */}
+      <Modal size='4xl' show={openModal} onClose={() => setOpenModal(false)}>
+        <Modal.Header >
+            
+        </Modal.Header>
+        <div className="text-center my-3 font-semibold text-md">تفاصيل الدورية</div>
+        <Modal.Body>
+          <div className="space-y-6">
+
+            <Location car={car}/>
+         <div className="w-1/2  space-y-3">
+            <h2 className="font-semibold text-sm ">خبراء السير</h2>
+         <div className="space-y-3">
+{JSON.parse(car.drivers).map(driver=>{
+    return      <div key={driver.job_id}  className="flex items-center gap-x-3">
+    <div className="flex-1 bg-green-600 text-white rounded-lg p-1 text-sm">{driver.name}</div>
+    <div className="flex-1 bg-green-600 text-white rounded-lg p-1 text-sm">{driver.phone}</div>
+    <Button onClick={()=>deleteDriver(driver.job_id)} size="xs" color="failure" >
+        حذف
+      </Button>
+  </div>
+    
+})}
+</div>
+         </div>
+
+
+         <CarReports nida={car.nida}/>
+          </div>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button color="gray" onClick={() => setOpenModal(false)}>
+            اغلاق
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  );
+}

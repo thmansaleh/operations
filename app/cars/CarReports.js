@@ -1,15 +1,16 @@
 import React from 'react'
 import { swrReportsToday } from '../swr/reportsToday'
-import EditBtn from './EditBtn'
+// import EditBtn from './EditBtn'
 import SpinnerLoading from '../components/SpinnerLoading'
-import DeleteBtn from './DeleteBtn'
+import EditBtn from '../reports/EditBtn'
 
-function Table() {
+function CarReports({nida}) {
   const { data ,isLoading } = swrReportsToday()
 if(isLoading) return <SpinnerLoading/>
   return (
 <div className="    shadow-md ">
-  <table className="w-full text-sm text-center  text-gray-500 ">
+    <div className='my-3 font-semibold text-center text-md'>الاحداث</div>
+  <table className=" text-sm text-center  text-gray-500 ">
     <thead className="text-xs text-white uppercase bg-gray-600 ">
       <tr>
     
@@ -44,7 +45,7 @@ if(isLoading) return <SpinnerLoading/>
     </thead>
     <tbody>
     {data.map(report=>{
-        return   <tr className="  border-b">
+       if(report.nida==nida) return   <tr className="  border-b">
         <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
         {report.report_no}
         </th>
@@ -72,9 +73,9 @@ if(isLoading) return <SpinnerLoading/>
         {report.note_police}
     </td>
         <td className="px-6 py-4">
-        <div className='flex items-center justify-center gap-x-4'>
+        {report.note_police}
+        <div>
           <EditBtn report={report}/>
-          <DeleteBtn report={report}/>
         </div>
     </td>
       </tr>
@@ -85,4 +86,4 @@ if(isLoading) return <SpinnerLoading/>
 </div>  )
 }
 
-export default Table
+export default CarReports
