@@ -5,10 +5,19 @@ import { Button, Modal, Tooltip } from "flowbite-react";
 import { useState } from "react";
 import CarReports from "./CarReports";
 import Location from "./Location";
+import { deleteUserFromCarsHistory } from "../services/deleteUserFromCarsHistory";
+import { swrCars } from "../swr/cars";
 
 export default function CarDetails({car}) {
   const [openModal, setOpenModal] = useState(false);
+  const { mutate } = swrCars()
 
+  const deleteDriver=async(jobId)=>{
+    await deleteUserFromCarsHistory(jobId)
+    // setOpenModal(false)
+    mutate()
+   
+   }
   return (
     <>
       <Tooltip content="تفاصيل الدورية">
@@ -20,18 +29,17 @@ export default function CarDetails({car}) {
         <Modal.Header >
             
         </Modal.Header>
-        <div className="text-center my-3 font-semibold text-md">تفاصيل الدورية</div>
+        <div className="text-center my-3 font-semibold text-md"> الدورية : {car.nida}</div>
         <Modal.Body>
           <div className="space-y-6">
 
             <Location car={car}/>
-         <div className="w-1/2  space-y-3">
+         <div className=" w-fit  space-y-3">
             <h2 className="font-semibold text-sm ">خبراء السير</h2>
          <div className="space-y-3">
 {JSON.parse(car.drivers).map(driver=>{
     return      <div key={driver.job_id}  className="flex items-center gap-x-3">
-    <div className="flex-1 bg-green-600 text-white rounded-lg p-1 text-sm">{driver.name}</div>
-    <div className="flex-1 bg-green-600 text-white rounded-lg p-1 text-sm">{driver.phone}</div>
+    <div className="flex-1 bg-green-600 text-white rounded-lg p-1 text-sm">{driver.name} : {driver.phone}</div>
     <Button onClick={()=>deleteDriver(driver.job_id)} size="xs" color="failure" >
         حذف
       </Button>

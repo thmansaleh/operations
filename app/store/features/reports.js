@@ -9,17 +9,17 @@ const reports= createSlice({
    
     addReport:{
         id:null,
-        nida:null,
-        reportNo:null,
-        sourceId:null,
-        typeId:null,
-        start:null,
-        arrive:null,
-        finish:null,
-        streetId:null,
-        description:null,
-        note:null,
-        period:null,
+        nida:'',
+        reportNo:'',
+        sourceId:'',
+        typeId:'',
+        start:'',
+        arrive:'',
+        finish:'',
+        streetId:'',
+        description:'',
+        note:'',
+        period:'',
  
     
 

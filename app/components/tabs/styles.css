@@ -1,5 +1,5 @@
 .tabs:checked + label >div{
-background: black !important;
+background: rgb(198, 52, 52) !important;
 }
 .tabs:checked + label >div>div{
 color: white !important;

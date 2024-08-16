@@ -17,7 +17,6 @@ export default function AddReportModal() {
   const [openModal, setOpenModal] = useState(false);
   const modalDispaly =useSelector(state=>state.reports.modalDispaly)
   const report =useSelector(state=>state.reports.addReport)
-  console.log('reoofe stat ', report)
   const dispatch=useDispatch()
 
 

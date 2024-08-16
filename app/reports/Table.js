@@ -3,6 +3,7 @@ import { swrReportsToday } from '../swr/reportsToday'
 import EditBtn from './EditBtn'
 import SpinnerLoading from '../components/SpinnerLoading'
 import DeleteBtn from './DeleteBtn'
+import DuplicateBtn from './DuplicateBtn'
 
 function Table() {
   const { data ,isLoading } = swrReportsToday()
@@ -75,6 +76,7 @@ if(isLoading) return <SpinnerLoading/>
         <div className='flex items-center justify-center gap-x-4'>
           <EditBtn report={report}/>
           <DeleteBtn report={report}/>
+          <DuplicateBtn report={report}/>
         </div>
     </td>
       </tr>

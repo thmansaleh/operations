@@ -23,7 +23,7 @@ function Cars() {
 {car.match_found?<>
 <div>
 {JSON.parse(car.drivers).map(driver=>{
-    return      <div key={car.nida} className="text-sm">{driver.name}</div>
+    return      <div key={driver.job_id} className="text-sm">{driver.name}</div>
     
 })}
 </div>

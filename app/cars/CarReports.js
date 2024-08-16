@@ -7,7 +7,10 @@ import EditBtn from '../reports/EditBtn'
 function CarReports({nida}) {
   const { data ,isLoading } = swrReportsToday()
 if(isLoading) return <SpinnerLoading/>
-  return (
+if(data){
+  const reports=data.filter(report=>report.nida==nida)
+  if(reports.length>0) {
+    return (
 <div className="    shadow-md ">
     <div className='my-3 font-semibold text-center text-md'>الاحداث</div>
   <table className=" text-sm text-center  text-gray-500 ">
@@ -44,8 +47,7 @@ if(isLoading) return <SpinnerLoading/>
       </tr>
     </thead>
     <tbody>
-    {data.map(report=>{
-       if(report.nida==nida) return   <tr className="  border-b">
+    {reports.map(report=>{ return   <tr key={report.report_no} className="  border-b">
         <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
         {report.report_no}
         </th>
@@ -84,6 +86,9 @@ if(isLoading) return <SpinnerLoading/>
     </tbody>
   </table>
 </div>  )
+  }else{
+    return <div className='my-3 font-semibold text-center text-md'>لاتوجد احداث</div>
+  }
 }
-
+}
 export default CarReports

@@ -10,7 +10,6 @@ const {data,error,isLoading} = swrDrivers()
 if(isLoading) return <h1 className="text-center mt-8">جاري التحميل...</h1>
 if(error) return <h1>error</h1>
 
-if(data) console.log(data)
 if(data) return <>
 <Table drivers={data} />
 </>

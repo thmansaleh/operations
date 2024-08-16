@@ -40,7 +40,6 @@ const addDriver=async (jobId)=>{
 
 
 const deleteDriver=async(jobId)=>{
-  // console.log(id)
  await deleteUserFromCarsHistory(jobId)
  setOpenModal(false)
  mutate()

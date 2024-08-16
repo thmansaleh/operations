@@ -11,13 +11,7 @@ function page() {
   return (
     <div className='p-3 space-y-3'>
         <AddReportModal page='reports' carNida=''/>
-        <Button onClick={ ()=>{
-         dispatch(addReport({action:'new'}))
-         dispatch(addReport({action:'page',data:'reports'}))
-        //  dispatch(addReport({action:'nida',data:car.nida}))
-         dispatch(addReport({action:'modalDispaly',data:true}))
-    }
-} gradientMonochrome="info" size='xs'>اضافة حدث</Button>
+     
 
         <Table/>
     </div>
