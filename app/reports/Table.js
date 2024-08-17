@@ -4,10 +4,13 @@ import EditBtn from './EditBtn'
 import SpinnerLoading from '../components/SpinnerLoading'
 import DeleteBtn from './DeleteBtn'
 import DuplicateBtn from './DuplicateBtn'
+import { useSelector } from 'react-redux'
 
 function Table() {
-  const { data ,isLoading } = swrReportsToday()
+  const period =useSelector(state=>state.account.period)
+  const { data ,isLoading } = swrReportsToday(period)
 if(isLoading) return <SpinnerLoading/>
+if(data.length==0) return <div className='text-center mt-5 text-lg text-gray-700 font-semibold'>لاتوجد احداث</div>
   return (
 <div className="    shadow-md ">
   <table className="w-full text-sm text-center  text-gray-500 ">

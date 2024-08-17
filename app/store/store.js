@@ -6,8 +6,10 @@ import  cart from "./features/cart"
 import schedule from './features/schedule';
 import driver from './features/driver';
 import reports from './features/reports';
+import account from './features/account';
 const store = configureStore({
     reducer: {
+        account: account,
         drivers: drivers,
         checkout: checkoutReducer,
         cart:cart,

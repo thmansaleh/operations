@@ -4,9 +4,9 @@ import axios from 'axios';
 
 import useSWR from 'swr'
 
-export function swrReportsToday(){
+export function swrReportsToday(period){
 //  const url ="https://saba.cc/schedule/shifts.php"
- const url ="https://express-rta.vercel.app/get-reports-for-today?period=المسائية"
+ const url =`https://express-rta.vercel.app/get-reports-for-today?period=${period}`
   const fetcher = async () => {
    const response = await axios.get(url);
 

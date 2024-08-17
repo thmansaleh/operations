@@ -9,14 +9,16 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function SaveBtn({index}) {
-    const { mutate } = swrReportsToday()
+    // const { mutate } = swrReportsToday()
 
     const report=useSelector(state=>state.reports.addReport)
+    const period=useSelector(state=>state.account.period)
+
     const dispatch=useDispatch()
     const [loading,setLoading] =useState(false)
 
     const add= async ()=>{
-        if(!report.nida || !report.reportNo || !report.start){
+        if(!report.nida || !report.reportNo || !report.start||!report.streetId||!report.sourceId||!report.typeId){
             toast.error('يرجئ ادخال جميع البيانات', {
                 position: "top-center",
                 autoClose: 3000,
@@ -31,11 +33,15 @@ function SaveBtn({index}) {
             return null
         }
         setLoading(true)
-        await addReportToDb(report.id,report.nida,report.reportNo,report.typeId,report.streetId,report.note,report.start,report.arrive,report.finish,report.sourceId,report.description)
+        await addReportToDb(
+            report.id,
+            period,report.nida,
+            report.reportNo,report.typeId,report.streetId,report.note,report.start,report.arrive,report.finish,report.sourceId,report.description)
         setLoading(false)
+        console.log(report)
      
-        dispatch(addReport({action:'modalDispaly',data:false}))
-mutate()        
+        // dispatch(addReport({action:'modalDispaly',data:false}))
+// mutate()        
         }
   return <>
         <ToastContainer/>

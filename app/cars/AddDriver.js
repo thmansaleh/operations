@@ -16,7 +16,6 @@ export default function AddDriver({car}) {
   const { mutate } = swrCars()
 
   if(error) return 'errore'
-  if(isLoading) return 'loading'
 
 const serach=(value)=>{
  if(value.length>3){

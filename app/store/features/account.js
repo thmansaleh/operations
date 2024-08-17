@@ -1,21 +1,28 @@
 "use client"
 import { createSlice } from '@reduxjs/toolkit';
 
-const cartSlice= createSlice({
-  name: 'cart',
+const account= createSlice({
+  name: 'account',
   initialState: {
-name:'home',
-show:true
+    account:null,
+    login:false,
+    period:false,
 },
   reducers: {
-    setItemCart: (state, action) => {
-      state.name=action.payload.pageName;
-      state.show=action.payload.show;
-    }
+    setAccount: (state, action) => {
+      state.account=action.payload.account;
+      state.period=action.payload.period;
+      state.login=true;
+    },
+    logout: (state, action) => {
+      state.login=false;
+      state.account=null;
+      state.period=false;
+    },
 
   },
 });
 
-export const { setItemCart } = navigationSlice.actions;
+export const { setAccount,logout } = account.actions;
 
-export default cartSlice.reducer;
+export default account.reducer;
