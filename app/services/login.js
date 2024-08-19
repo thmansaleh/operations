@@ -1,6 +1,9 @@
 
 import axios from 'axios';
- const url ="https://express-rta.vercel.app/operations-login"
+import { apiUrl } from '../constants';
+//  const url ="https://express-rta.vercel.app/operations-login"
+const url =`${apiUrl}/operations-login`
+
   export const login= async (username,password) => {
 
     const period='المسائية'

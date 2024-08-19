@@ -3,10 +3,12 @@
 import axios from 'axios';
 
 import useSWR from 'swr'
+import { apiUrl } from '../constants';
 
 export function swrSources(){
-//  const url ="https://saba.cc/schedule/shifts.php"
- const url ="https://express-rta.vercel.app/get-sources"
+//  const url ="https://express-rta.vercel.app/get-sources"
+ const url =`${apiUrl}/get-sources`
+
   const fetcher = async () => {
    const response = await axios.get(url);
 

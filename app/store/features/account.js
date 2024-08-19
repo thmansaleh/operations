@@ -11,13 +11,15 @@ const account= createSlice({
   reducers: {
     setAccount: (state, action) => {
       state.account=action.payload.account;
-      state.period=action.payload.period;
+      state.period=localStorage.getItem('period')
       state.login=true;
     },
     logout: (state, action) => {
       state.login=false;
       state.account=null;
       state.period=false;
+      localStorage.removeItem('token')
+      localStorage.removeItem('period')
     },
 
   },

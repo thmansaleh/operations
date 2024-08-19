@@ -25,10 +25,11 @@ loading.current.style.display='flex'
 
     const response = await loginCheck(username,password)
 
-         if (response!=false) {
+         if (response.auth) {
           
-          dispatch(setAccount({account:response,period:period}))
-          localStorage.setItem('period',period)
+           localStorage.setItem('period',period)
+           localStorage.setItem('token',response.token)
+          dispatch(setAccount({account:response.user}))
 
          } else {
           console.log(false)

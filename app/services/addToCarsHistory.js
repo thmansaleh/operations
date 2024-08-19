@@ -1,6 +1,9 @@
 
 import axios from 'axios';
- const url ="https://express-rta.vercel.app/add-car-history"
+import { apiUrl } from '../constants';
+//  const url ="https://express-rta.vercel.app/add-car-history"
+const url =`${apiUrl}/add-car-history`
+
   export const addToCarsHistory= async (nida,jobId,) => {
 
     const period =localStorage.getItem('period')
