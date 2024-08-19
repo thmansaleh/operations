@@ -1,9 +1,10 @@
 
 import axios from 'axios';
  const url ="https://express-rta.vercel.app/add-report-operations"
-  export const addReportToDb= async (id,period,nida,report_no,type_id,street_id,note_police,start,arrive,finish,source,description) => {
+  export const addReportToDb= async (id,nida,report_no,type_id,street_id,note_police,start,arrive,finish,source,description) => {
     // if (!nida || !report_no || !period || !type_id || !source_id || !street_id || !start || !arrive || !finish  || !note_police) {
 
+    const period =localStorage.getItem('period')
    const response = await axios.get(url,{
      params: {
        id:id,

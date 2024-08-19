@@ -5,11 +5,11 @@ import axios from 'axios';
 import useSWR from 'swr'
 
 
-export  function swrCars(){
+export  function swrMechanismsDrivers(){
 
   const period =localStorage.getItem('period')
 
- const url =`https://express-rta.vercel.app/operations-cars?period=${period}`
+ const url =`https://express-rta.vercel.app/get-all-mechanisms-drivers`
 const fetcher =async ()=>{
   const response = await axios.get(url)
   return response.data

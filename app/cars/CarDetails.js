@@ -37,7 +37,7 @@ export default function CarDetails({car}) {
          <div className=" w-fit  space-y-3">
             <h2 className="font-semibold text-sm ">خبراء السير</h2>
          <div className="space-y-3">
-{JSON.parse(car.drivers).map(driver=>{
+{car.drivers.map(driver=>{
     return      <div key={driver.job_id}  className="flex items-center gap-x-3">
     <div className="flex-1 bg-green-600 text-white rounded-lg p-1 text-sm">{driver.name} : {driver.phone}</div>
     <Button onClick={()=>deleteDriver(driver.job_id)} size="xs" color="failure" >

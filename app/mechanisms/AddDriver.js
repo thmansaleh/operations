@@ -3,16 +3,16 @@
 
 import { Button, Modal } from "flowbite-react";
 import { useState } from "react";
-import { swrDrivers } from "../swr/drivers";
 import { swrCars } from "../swr/cars";
-import { addToCarsHistory } from "../addToCarsHistory";
+import { addToCarsHistory } from "../services/addToCarsHistory";
 import { deleteUserFromCarsHistory } from "../services/deleteUserFromCarsHistory";
+import { swrMechanismsDrivers } from "../swr/swrMechanismsDrivers";
 
 
 export default function AddDriver({car}) {
   const [openModal, setOpenModal] = useState(false);
   const [drivers, setDrivers] = useState([]);
-  const { data , error, isLoading, } = swrDrivers()
+  const { data , error, isLoading, } = swrMechanismsDrivers()
   const { mutate } = swrCars()
 
   if(error) return 'errore'
@@ -72,7 +72,7 @@ const deleteDriver=async(jobId)=>{
 
 {car.match_found?<>
 <div>
-{JSON.parse(car.drivers).map(driver=>{
+{car.drivers.map(driver=>{
     return      <div key={driver.job_id}  className="flex items-center gap-x-3">
     <div className="flex-1 bg-green-600 text-white rounded-lg p-1 text-sm">{driver.name}</div>
     <Button onClick={()=>deleteDriver(driver.job_id)} size="xs" color="failure" >

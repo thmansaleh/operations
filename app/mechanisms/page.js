@@ -1,7 +1,7 @@
 'use client'
 
 import AddReportModal from "../components/add-report-modal/AddRportModal"
-import Cars from "./Cars"
+import Cars from "./Mechanisms"
 
 function page() {
 

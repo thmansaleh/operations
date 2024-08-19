@@ -13,6 +13,5 @@ if(error) return <h1>error</h1>
 if(data) return <>
 <Table drivers={data} />
 </>
-// if(data) return <Test drivers={data} />
 
 }

@@ -1,24 +1,30 @@
-import {  Rating } from "flowbite-react"
-import { swrStreetsReportsCount } from "../swr/streetsReportsCount"
-import ReportsLoading from "./ReportsLoading"
-
+import { swrStreestReorts } from "../swr/streetsReports"
 
 function Streets() {
-    const { data , error, isLoading } = swrStreetsReportsCount()
-    if(isLoading) return <ReportsLoading/>
-    return <div className="p-6  w-full ">
-    
-    <h2 className="my-3  font-semibold" >الشوارع </h2>
-    {data.map(street=>{
-        return <>
-         <Rating.Advanced  percentFilled={street.report_percentage} className="mb-2 ">
-        {street.street_name}
-      </Rating.Advanced>
-   
-        </>
-    })}
+    const { data , error, isLoading } = swrStreestReorts()
+    if(isLoading) 'جاري التحميل'
+      // return null
+  if(data) return <div>
+    <div className="text-gray-600 font-semibold text-md mb-3">الشوارع</div>
+ <div className="space-y-3">
 
-</div>
+    {data.map(street=>{
+      return <div key={street.report_count} className="text-sm flex items-center gap-x-2 text-gray-700 font-semibold">
+      <div>  
+          {street.street_name}
+      </div>   
+       :
+      
+      <div className="bg-green-500  text-sm rounded-full w-5 h-5 text-white flex justify-center items-center">    {street.report_count}
+      </div>
+        </div>
+
+
+    })}
+     </div>
+
+  </div>
+
 }
 
 export default Streets

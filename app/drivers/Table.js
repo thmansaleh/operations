@@ -17,7 +17,7 @@ export default function Table({drivers}){
   },[drivers])
 
   return <>
-<div className="container mx-auto px-4 sm:px-8">
+<div className="container mx-auto px-4  custom-scroll overflow-auto h-screen sm:px-8">
   <div className="">
    
     <div className="my-2 flex justify-center items-center ">
@@ -29,7 +29,7 @@ export default function Table({drivers}){
 
 
     </div>
-    <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+    <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 ">
       <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
         <table className="min-w-full text-center leading-normal">
           <thead>

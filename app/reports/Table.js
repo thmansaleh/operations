@@ -27,7 +27,7 @@ if(data.length==0) return <div className='text-center mt-5 text-lg text-gray-700
           نوع الحدث
         </th>
         <th scope="col" className="px-6 py-3">
-          الدورية
+          النداء
         </th>
         <th scope="col" className="px-6 py-3">
           الاستلام
