@@ -13,7 +13,8 @@ if(isLoading) return 'loading'
 
 return <div className="flex items-center gap-x-3">
   <Select defaultValue={report.streetId}  onChange={e=>dispatch(addReport({action:'streetId',data:e.target.value}))} className=" w-fit" >
-{data.map(street=>{
+  <option >الشارع</option>
+  {data.map(street=>{
   return <option value={street.id} key={street.id}>{street.street_name} </option>
 })}
 </Select>

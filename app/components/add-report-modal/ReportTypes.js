@@ -11,6 +11,7 @@ function ReportTypes() {
     const { data,isLoading  } = swrReportTypes()
 if(isLoading) return 'loading'
   return <Select defaultValue={report.typeId}  onChange={e=>dispatch(addReport({action:'typeId',data:e.target.value}))} className=" w-32" >
+     <option >نوع الحدث</option>
           {data.map(type=>{
             return <option  value={type.id} key={type.id}>{type.type} </option>
           })}

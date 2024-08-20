@@ -18,7 +18,7 @@ export default function AddDriver({car}) {
   if(error) return 'errore'
 
 const serach=(value)=>{
- if(value.length>3){
+ if(value.length>2){
   const newSearch = data.filter(driver => 
     driver.name.toLowerCase().includes(value.toLowerCase()) || 
     driver.phone.toString().includes(value) || 

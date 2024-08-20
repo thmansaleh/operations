@@ -64,13 +64,16 @@ if(data.length==0) return <div className='text-center mt-5 text-lg text-gray-700
 
         </td>
         <td className="px-6 py-4">
-        {report.start}
+        {!report.start?<div
+        className='w-2 h-2 bg-yellow-400 rounded-full'></div>:report.start}
         </td>
         <td className="px-6 py-4">
-        {report.arrive}
+        {!report.arrive?<div
+        className='w-2 h-2 bg-yellow-400 rounded-full'></div>:report.arrive}
         </td>
         <td className="px-6 py-4">
-        {report.finish}
+        {!report.finish?<div
+        className='w-2 h-2 bg-yellow-400 rounded-full'></div>:report.finish}
         </td>
         <td className="px-6 py-4">
         {report.note_police}

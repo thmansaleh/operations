@@ -1,11 +1,13 @@
+import { swrReportsToday } from "../swr/reportsToday"
 import { swrSourcesReports } from "../swr/sourcesReports"
 
 function Informations() {
-  const {data,error,isLoading} = swrSourcesReports()
+  // const {data,error,isLoading} = swrSourcesReports()
+  const {data,error,isLoading} = swrReportsToday()
 
 if(isLoading) return 'جاري التحميل'
   return (
-<div className="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
+<div className="">
   {/* Card */}
   <div className="flex items-center p-4 bg-white rounded-lg gap-x-3    dark:bg-gray-800">
     <div className="p-3 mr-4 text-orange-500 bg-orange-100 rounded-full dark:text-orange-100 dark:bg-orange-500">
@@ -15,8 +17,10 @@ if(isLoading) return 'جاري التحميل'
       <p className="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">
         عدد البلاغات 
       </p>
-     <div className="flex gap-x-6">
-   {data.map(source=>{
+     <div className="font-semibold text-gray-600">
+      {data.length}
+      
+   {/* {data.map(source=>{
     return   <div key={source.report_count} className="text-sm flex items-center gap-x-2 text-gray-700 font-semibold">
 <div>  
     {source.source_name}
@@ -26,7 +30,7 @@ if(isLoading) return 'جاري التحميل'
 <div className="bg-green-500  text-sm rounded-full w-5 h-5 text-white flex justify-center items-center">    {source.report_count}
 </div>
   </div>
-   })}
+   })} */}
  
      </div>
  
