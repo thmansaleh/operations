@@ -34,7 +34,6 @@ const addDriver=async (jobId)=>{
   mutate()
   setOpenModal(false)
 
-  // console.log(car.name,jobId)
 }
 
 

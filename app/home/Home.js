@@ -4,7 +4,9 @@ import Drivers from "./Drivers"
 // import {ProgressBar} from 'react-customizable-progressbar';
 
 import ReportsCount from "./ReportsCount"
+import Sources from "./Sources"
 import Streets from "./Streets"
+import Types from "./Types"
 
 function Home() {
   return <div className="p-5">
@@ -14,7 +16,13 @@ function Home() {
       <Cars/>
   
     </div>
-        <Streets/> 
+
+    <div className="flex justify-around bg-gray-700  py-5 rounded-lg">
+    <Streets/>
+    <Sources/>
+    <Types/>
+
+    </div>
   </div>
       
   

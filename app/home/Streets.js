@@ -5,11 +5,11 @@ function Streets() {
     if(isLoading) 'جاري التحميل'
       // return null
   if(data) return <div>
-    <div className="text-gray-600 font-semibold text-md mb-3">الشوارع</div>
  <div className="space-y-3">
+ <div className=" bg-white py-2 rounded-lg font-semibold text-sm text-center w-44">الشوارع</div>
 
     {data.map(street=>{
-      return <div key={street.report_count} className="text-sm flex items-center gap-x-2 text-gray-700 font-semibold">
+      return <div key={street.report_count} className="text-sm justify-center flex items-center gap-x-2 text-white font-semibold">
       <div>  
           {street.street_name}
       </div>   
