@@ -48,20 +48,20 @@ loading.current.style.display='flex'
  };
 
 
-return <section className="select-none ">
-  <div className="flex flex-col items-center  justify-center px-6 py-8  fixed inset-0">
-    <div className="w-full md:w-1/2 bg-white rounded-lg shadow  ">
+return <section className="select-none bg-gray-700 ">
+  <div className="flex flex-col items-center  justify-center px-6 py-8 bg-gray-700  fixed inset-0">
+    <div className="w-full md:w-1/3  rounded-lg shadow-2xl  bg-gray-700 ">
       <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-        <h1  className="text-md text-center font-bold leading-tight tracking-tight text-gray-900  mb-6">
+        <h1  className="text-md text-center font-bold leading-tight tracking-tight text-white  mb-6">
        وحدة إدارة  الحوادث المرورية 
         </h1>
 
           <div>
-            <label htmlFor="email" className="block mb-2 text-sm f text-gray-900 ">اسم المستخدم</label>
+            <label htmlFor="email" className="block mb-2 text-sm  text-white  font-semibold">اسم المستخدم</label>
             <input value={username} onChange={(e)=>setUsername(e.target.value)} type="text" name="username" id="email" className="focus:ring-gray-800 focus:border-gray-800 bg-gray-50 border border-gray-300 text-gray-900 w-full  rounded-lg p-2.5" placeholder="" required />
           </div>
           <div>
-            <label  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">كلمة المرور</label>
+            <label  className="block mb-2 text-sm font-medium text-white">كلمة المرور</label>
             <input value={password} onChange={(e)=>setPassword(e.target.value)} type="text"  placeholder="" className="focus:ring-gray-800 focus:border-gray-800 bg-gray-50 border border-gray-300 text-gray-900 w-full  rounded-lg p-2.5" required />
           </div>
 
@@ -69,7 +69,7 @@ return <section className="select-none ">
           <Select  
           onChange={(e)=>setPeriod(e.target.value)}
           // onChange={e=>dispatch(addReport({action:'typeId',data:e.target.value}))}
-           className=" w-32" >
+           className=" w-32 text-white" >
       
              <option  value={false}>اختر الفترة </option>
              <option  value='الصباحية'>الفترة الصباحية </option>
@@ -87,7 +87,7 @@ return <section className="select-none ">
 
 
           <span ref={errorMsg}  className="text-sm text-red-600 my-2 inline-block "></span>
-          <button onClick={()=>login()} type="submit" className="w-full text-white bg-gray-700   rounded-lg text-sm px-5 py-2.5 text-center ">تسجيل الدخول</button>
+          <button onClick={()=>login()} type="submit" className="w-full text-white bg-orange-500   rounded-lg text-sm px-5 py-2.5 text-center ">تسجيل الدخول</button>
 
       </div>
     </div>

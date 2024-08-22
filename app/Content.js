@@ -38,7 +38,7 @@ console.log('loginnn',data)
 <Header/>
     <div className="flex">
     <Tabs/>
-    <div className="flex-1 ">    {children}
+    <div className="flex-1  ">    {children}
     </div>
   </div>  
   </div>
