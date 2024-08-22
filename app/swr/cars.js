@@ -16,12 +16,7 @@ export  function swrCars(){
  const url =`${apiUrl}/operations-cars?period=${period}`
 
 const fetcher =async ()=>{
-  const response = await axios.get(url,{
-    headers: {
-      'Authorization': `${token}`
-  }
-
-  })
+  const response = await axios.get(url)
   return response.data
 }
  
