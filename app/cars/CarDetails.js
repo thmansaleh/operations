@@ -32,6 +32,10 @@ export default function CarDetails({car}) {
         <div className="text-center my-3 font-semibold text-md"> الدورية : {car.nida}</div>
         <Modal.Body>
           <div className="space-y-6">
+          <div className="text-sm font-semibold text-gray-800">
+            وقت الاستلام: 
+            {car.drivers[0].time}
+            </div>
 
             <Location car={car}/>
          <div className=" w-fit  space-y-3">

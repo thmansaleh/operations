@@ -75,7 +75,6 @@ if(data){
         {report.note_police}
     </td>
         <td className="px-6 py-4">
-        {report.note_police}
         <div>
           <EditBtn report={report}/>
         </div>

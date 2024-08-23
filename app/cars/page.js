@@ -7,15 +7,24 @@ import RefreshBtn from "./RefreshBtn"
 
 function page() {
   const { data , error, isLoading } = swrCars()
+if(data){
+  const cars=data.filter(car=>car.match_found)
+  console.log(cars.length)
+  if(cars.length>0)  return <div className="p-3">
+  <AddReportModal/>
+  <RefreshBtn/>
+  <Cars/>
 
-  return (
-    <div className="p-3">
-      <AddReportModal/>
-      <RefreshBtn/>
-<Cars/>
+</div>
 
-    </div>
-  )
+return <div className="p-3">
+<RefreshBtn/>
+<div className="text-center text-md font-semibold text-gray-800 my-7">لاتوجد دوريات</div>
+
+</div>
+ 
+}
+
 }
 
 export default page
