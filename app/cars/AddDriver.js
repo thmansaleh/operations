@@ -45,7 +45,7 @@ const deleteDriver=async(jobId)=>{
 }
   return (
     <>
-      <Button  onClick={() => setOpenModal(true)}  className="h-7 w-7  flex justify-center items-center rounded-full " color={car.match_found
+      <Button    className="h-7 w-7  flex justify-center items-center rounded-full " color={car.match_found
 ?"success":"warning"}>{car.nida}</Button>
    
       <Modal show={openModal} onClose={() => setOpenModal(false)}>
