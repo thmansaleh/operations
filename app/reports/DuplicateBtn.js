@@ -7,7 +7,7 @@ function DuplicateBtn({report}) {
     // console.log(report)
   return (
     <>
-        <Tooltip content="نسخ الحدث">
+        <Tooltip content="ربط الحدث">
 
         <svg onClick={ ()=>{
          dispatch(addReport({action:'modalDispaly',data:true}))
