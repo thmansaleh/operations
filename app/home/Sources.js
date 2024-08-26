@@ -10,7 +10,7 @@ function Sources() {
     
 <div className=" bg-white py-2 rounded-lg font-semibold text-sm text-center w-44">المصدر</div>
     {data.map(source=>{
-      return <div key={source.report_count} className="text-sm flex items-center justify-center gap-x-2 text-white font-semibold">
+      return <div key={source.report_count * Math.random() +2} className="text-sm flex items-center justify-center gap-x-2 text-gray-800 font-semibold">
       <div>  
           {source.source_name}
       </div>   

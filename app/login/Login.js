@@ -87,7 +87,7 @@ return <section className="select-none bg-gray-700 ">
 
 
           <span ref={errorMsg}  className="text-sm text-red-600 my-2 inline-block "></span>
-          <button onClick={()=>login()} type="submit" className="w-full text-white bg-orange-500   rounded-lg text-sm px-5 py-2.5 text-center ">تسجيل الدخول</button>
+          <button onClick={()=>login()} type="submit" className="w-full text-white bg-green-500   rounded-lg text-sm px-5 py-2.5 text-center ">تسجيل الدخول</button>
 
       </div>
     </div>

@@ -9,7 +9,7 @@ function Streets() {
  <div className=" bg-white py-2 rounded-lg font-semibold text-sm text-center w-44">الشوارع</div>
 
     {data.map(street=>{
-      return <div key={street.report_count} className="text-sm justify-center flex items-center gap-x-2 text-white font-semibold">
+      return <div key={street.report_count* Math.random() +2} className="text-sm justify-center flex items-center gap-x-2 text-gray-800 font-semibold">
       <div>  
           {street.street_name}
       </div>   

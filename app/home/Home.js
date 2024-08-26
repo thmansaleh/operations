@@ -17,7 +17,7 @@ function Home() {
   
     </div>
 
-    <div className="flex justify-around bg-gray-700  py-5 rounded-lg">
+    <div className="flex justify-around border-2   py-5 rounded-lg">
     <Streets/>
     <Sources/>
     <Types/>

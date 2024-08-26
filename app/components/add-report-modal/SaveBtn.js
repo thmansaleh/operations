@@ -23,7 +23,7 @@ function SaveBtn({index}) {
                 position: "top-center",
                 autoClose: 3000,
                 rtl:true,
-                hideProgressBar: false,
+                hideProgressBar: true,
                 closeOnClick: true,
                 pauseOnHover: true,
                 draggable: true,
@@ -37,12 +37,22 @@ function SaveBtn({index}) {
             report.id,report.nida,
             report.reportNo,report.typeId,report.streetId,report.note,report.start,report.arrive,report.finish,report.sourceId,report.description)
         setLoading(false)
+        toast.success('تم اضافة الحدث بنجاح', {
+            position: "top-center",
+            autoClose: 3000,
+            rtl:true,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light"
+      });
      
         dispatch(addReport({action:'modalDispaly',data:false}))
 mutate()        
         }
   return <>
-        <ToastContainer/>
 
     <Button isProcessing={loading} gradientMonochrome="success" size='sm'  onClick={add}>حفظ</Button>
   </>
