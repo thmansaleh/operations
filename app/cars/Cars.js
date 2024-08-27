@@ -16,16 +16,16 @@ function Cars() {
 
  if(data) return <div className="space-y-4 p-3 max-h-svh overflow-y-auto custom-scroll">
     {data.sort((a,b)=>a.nida - b.nida).map(car=>{
-      if(car.match_found)  return <div  className="bg-gray-200 rounded-lg p-3 flex gap-x-4 items-center" key={car.id}> 
+      if(car.type=='patrol' & car.is_match)  return <div  className="bg-gray-200 rounded-lg p-3 flex gap-x-4 items-center" key={car.car_id}> 
 
  <AddDriver car={car}/>
 
-{car.match_found?<>
+{car.is_match?<>
 <div>
-{car.drivers.map(driver=>{
-    return      <div key={driver.job_id} className="text-sm">{driver.name}</div>
-    
-})}
+<div  className="text-sm">{car.driver_name}</div>
+{car.extra_driver_name?<div  className="text-sm">{car.extra_driver_name}</div>
+:null}
+
 </div>
 <AddReportBtn car={car}/>
 

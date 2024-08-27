@@ -6,7 +6,7 @@ function Cars() {
 
     if(isLoading) return 'loding'
  if(data){
-const count =data.filter(e=>e.match_found)
+const count =data.filter(e=>e.is_match)
     
   return (
     <div className="flex items-center p-4 bg-white rounded-lg gap-x-3   shadow-xs">

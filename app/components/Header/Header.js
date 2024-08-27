@@ -2,7 +2,6 @@ import React from 'react'
 import Username from './Username'
 import LogoutBtn from './LogoutBtn'
 import { useSelector } from 'react-redux'
-import Logo from './Logo'
 
 function Header() {
     const period =useSelector(state=>state.account.period)

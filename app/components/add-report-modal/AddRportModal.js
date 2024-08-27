@@ -22,15 +22,7 @@ export default function AddReportModal() {
 
   return (
     <>
-    {/* <Button onClick={() =>
-    {
-      if(page=='cars') dispatch(addReport({action:'nida',data:value}))
-     dispatch(addReport({action:'modalDispaly',data:true}))
-      //  setOpenModal(true)
-      
-    } 
-    }
-       size="xs" gradientMonochrome="teal">اضافة حدث</Button> */}
+  
 
       <Modal size='2xl' show={modalDispaly} onClose={() =>      dispatch(addReport({action:'modalDispaly',data:false}))
 }>

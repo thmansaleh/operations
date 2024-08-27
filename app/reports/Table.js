@@ -48,7 +48,7 @@ if(data.length==0) return <div className='text-center mt-5 text-lg text-gray-700
     </thead>
     <tbody>
     {data.map(report=>{
-        return   <tr className="  border-b">
+        return   <tr key={report.id} className="  border-b">
         <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
         {report.report_no}
         </th>

@@ -34,19 +34,29 @@ export default function CarDetails({car}) {
           <div className="space-y-6">
           <div className="text-sm font-semibold text-gray-800">
             وقت الاستلام: 
-            {car.drivers[0].time}
+            {car.date}
             </div>
 
             <Location car={car}/>
          <div className=" w-fit  space-y-3">
             <h2 className="font-semibold text-sm ">خبراء السير</h2>
          <div className="space-y-3">
-{car.drivers.map(driver=>{
-    return      <div key={driver.job_id}  className="flex items-center gap-x-3">
-    <div className="flex-1 bg-green-600 text-white rounded-lg p-1 text-sm">{driver.name} : {driver.phone}</div>
-  </div>
-    
-})}
+   <div className="flex gap-x-3  items-center">
+<div  className="text-sm">{car.driver_name}
+</div>
+<div  className="text-sm">رقم الهاتف :{car.driver_phone}
+</div>
+    </div>      
+
+{car.extra_driver_name?<div className="flex gap-x-3  items-center">
+<div  className="text-sm">{car.extra_driver_name}
+</div>
+<div  className="text-sm">رقم الهاتف :{car.extra_driver_phone}
+</div>
+    </div> 
+:null}
+
+
 </div>
          </div>
 

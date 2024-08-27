@@ -8,6 +8,7 @@ const reports= createSlice({
     page:null,
    
     addReport:{
+        
         id:null,
         nida:'',
         reportNo:'',

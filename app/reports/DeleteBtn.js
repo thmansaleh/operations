@@ -2,6 +2,8 @@ import { Modal, Tooltip ,Button} from 'flowbite-react'
 import { useDispatch } from 'react-redux'
 import { addReport } from '../store/features/reports'
 import { useState } from 'react'
+import {  toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { HiOutlineExclamationCircle } from "react-icons/hi";
 import { deleteReport } from '../services/deleteReport';
@@ -15,6 +17,18 @@ export default function DeleteBtn({report}) {
 
     const remove= async()=>{
 await deleteReport(report.id)
+
+toast.success(`تم حذف الحدث ${report.report_no}`, {
+  position: "top-center",
+  autoClose: 3000,
+  rtl:true,
+  hideProgressBar: true,
+  closeOnClick: true,
+  pauseOnHover: true,
+  draggable: true,
+  progress: undefined,
+  theme: "light"
+});
 setOpenModal(false)
 mutate()
     }

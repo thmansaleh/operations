@@ -12,6 +12,7 @@ function AddReportBtn({car}) {
          dispatch(addReport({action:'page',data:'cars'}))
          dispatch(addReport({action:'modalDispaly',data:true}))
          dispatch(addReport({action:'new',data:{
+          carId:car.car_history_id,
           nida:car.nida,
           reportNo:null,
           sourceId:null,
