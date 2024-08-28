@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function RefreshBtn() {
     const { mutate } = swrCars()
-
+return null
   return <>
     <ToastContainer/>
 
