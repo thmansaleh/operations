@@ -20,7 +20,7 @@ const fetcher =async ()=>{
   return response.data
 }
  
-const { data , error, isLoading ,mutate} = useSWR(url,fetcher,{ refreshInterval: 3000 })
+const { data , error, isLoading ,mutate} = useSWR(url,fetcher,{ refreshInterval: 2000 })
 
 return {
   data,

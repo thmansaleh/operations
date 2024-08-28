@@ -18,7 +18,7 @@ if(data){
 </div>
 
 return <div className="p-3">
-<RefreshBtn/>
+{/* <RefreshBtn/> */}
 <div className="text-center text-md font-semibold text-gray-800 my-7">لاتوجد دوريات</div>
 
 </div>
