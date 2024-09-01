@@ -11,7 +11,7 @@ if(isLoading) return 'loooading'
      </div>
     <div>
       <p className="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">
-       خبراء السير
+       عدد الافراد  
      </p>
       <p className="text-lg font-semibold text-gray-700 dark:text-gray-200">
 {    data.length

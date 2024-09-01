@@ -1,6 +1,7 @@
 'use client'
 import Cars from "./Cars"
 import Drivers from "./Drivers"
+import Mechanisms from "./Mechanisms"
 // import {ProgressBar} from 'react-customizable-progressbar';
 
 import ReportsCount from "./ReportsCount"
@@ -14,6 +15,7 @@ function Home() {
       <ReportsCount/>
       <Drivers/>
       <Cars/>
+      <Mechanisms/>
   
     </div>
 

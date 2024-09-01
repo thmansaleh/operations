@@ -7,8 +7,8 @@ function page() {
 
   return (
     <div className="p-3">
-      <AddReportModal/>
-<Cars/>
+  <AddReportModal/>
+  <Cars/>
 
     </div>
   )

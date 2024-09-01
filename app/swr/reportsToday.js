@@ -8,7 +8,6 @@ import { apiUrl } from '../constants';
 export function swrReportsToday(){
   const period =localStorage.getItem('period')
 
-//  const url =`https://express-rta.vercel.app/get-reports-for-today?period=${period}`
 const url =`${apiUrl}/get-reports-for-today?period=${period}`
 
   const fetcher = async () => {

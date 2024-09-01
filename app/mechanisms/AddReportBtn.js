@@ -10,7 +10,6 @@ function AddReportBtn({car}) {
 
         <svg onClick={ ()=>{
          dispatch(addReport({action:'page',data:'cars'}))
-        //  dispatch(addReport({action:'nida',data:car.nida}))
          dispatch(addReport({action:'modalDispaly',data:true}))
          dispatch(addReport({action:'new',data:{
           nida:car.nida,

@@ -5,12 +5,12 @@ const reports= createSlice({
   name: 'reports',
   initialState: {
     modalDispaly:false,
-    page:null,
+    action:null,
    
     addReport:{
         
         id:null,
-        nida:'',
+        nida:undefined,
         reportNo:'',
         sourceId:'',
         typeId:'',
@@ -65,8 +65,8 @@ const reports= createSlice({
         case 'modalDispaly':
             state.modalDispaly=action.payload.data
             break;
-        case 'page':
-            state.page=action.payload.data
+        case 'action':
+            state.action=action.payload.data
             break;
         case 'new':
             state.addReport=action.payload.data

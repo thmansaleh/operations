@@ -11,6 +11,7 @@ import SaveBtn from "./SaveBtn";
 import { addReport } from "@/app/store/features/reports";
 import { useDispatch, useSelector } from "react-redux";
 import StreetName from "./StreetName";
+import ReportNoInput from "./ReportNoInput";
 
 
 export default function AddReportModal() {
@@ -29,8 +30,11 @@ export default function AddReportModal() {
         <Modal.Header ></Modal.Header>
         <Modal.Body>
         <div className=" flex gap-y-4 justify-center flex-col items-center">
-
+<div className="flex justify-center items-center gap-x-4">
+  
+<ReportNoInput/>
 <Nida />
+</div>
   <div className="flex justify-center items-center gap-x-4" >
 <Sources/>
 <ReportTypes/>

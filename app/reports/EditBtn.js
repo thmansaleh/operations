@@ -12,8 +12,8 @@ function EditBtn({report}) {
         <svg onClick={ ()=>{
        
         //  dispatch(addReport({action:'new'}))
-        //  dispatch(addReport({action:'page',data:'cars'}))
         //  dispatch(addReport({action:'nida',data:car.nida}))
+        dispatch(addReport({action:'action',data:'edit'}))
          dispatch(addReport({action:'modalDispaly',data:true}))
          dispatch(addReport({action:'new',data:{
             id:report.id,

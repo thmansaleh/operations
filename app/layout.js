@@ -4,8 +4,8 @@ import ProviderPage from "./Provider";
 
 
 export const metadata = {
-  title: "RTA",
-  description: "RTA",
+  title: "TIMU",
+  description: "TIMU",
 };
 
 export default function RootLayout({ children }) {
