@@ -6,6 +6,7 @@ import { useEffect } from 'react'
 import { verifyToken } from './services/verifyToken'
 import { setAccount } from './store/features/account'
 import { useRouter } from 'next/navigation'
+import AddReportModal from './components/add-report-modal/AddRportModal'
 
  function  Content({children}) {
   const dispatch=useDispatch()
@@ -35,10 +36,12 @@ console.log('loginnn',data)
     const login =useSelector(state=>state.account.login)
    if(!login) return <Login/>
   return <div>
+    <AddReportModal/>
 <Header/>
-    <div className="flex">
+    <div >
     <Tabs/>
-    <div className="flex-1  ">    {children}
+    <div className="w-full p-3">  
+        {children}
     </div>
   </div>  
   </div>

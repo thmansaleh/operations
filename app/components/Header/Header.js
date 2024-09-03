@@ -7,7 +7,7 @@ function Header() {
     const period =useSelector(state=>state.account.period)
 
   return (
-    <div className='w-full bg-gray-700 p-2  flex items-center'>
+    <div className='w-full  text-black p-2  flex items-center'>
 <Username/>
 {/* <Logo/> */}
 <div className='flex-1 text-center text-white font-semibold text-sm'>

@@ -1,11 +1,11 @@
-import { addReport } from '@/app/store/features/reports'
+import { add as addReport } from '@/app/store/features/addReport'
 import { swrSources } from '@/app/swr/sources'
 import { Select } from 'flowbite-react'
 import { useDispatch, useSelector } from 'react-redux'
 
 function Sources() {
     const dispatch =useDispatch()
-    const report =useSelector(state=>state.reports.addReport)
+    const report =useSelector(state=>state.addReport)
 
     const { data ,isLoading } = swrSources()
 if(isLoading) return 'looading'

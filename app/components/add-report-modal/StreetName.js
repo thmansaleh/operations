@@ -1,5 +1,5 @@
 
-import { addReport } from "@/app/store/features/reports"
+import { add as addReport } from '@/app/store/features/addReport'
 import { swrStreets } from "@/app/swr/streets"
 import { Select } from "flowbite-react"
 import { useDispatch, useSelector } from "react-redux"
@@ -7,11 +7,11 @@ import { useDispatch, useSelector } from "react-redux"
 function StreetName() {
   const dispatch=useDispatch()
   const { data ,isLoading } = swrStreets()
-  const report =useSelector(state=>state.reports.addReport)
+  const report =useSelector(state=>state.addReport)
 
 if(isLoading) return 'loading'
 
-return <div className="flex items-center gap-x-3">
+return <div className=" space-y-3">
   <Select defaultValue={report.streetId}  onChange={e=>dispatch(addReport({action:'streetId',data:e.target.value}))} className=" w-fit" >
   <option >الشارع</option>
   {data.map(street=>{

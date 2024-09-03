@@ -1,11 +1,23 @@
 
 import axios from 'axios';
 import { apiUrl } from '../constants';
+import { generateRandomReportNumber } from './helpers/generateRandomReportNumber';
 //  const url ="https://express-rta.vercel.app/add-report-operations"
 const url =`${apiUrl}/add-report-operations`
 
-  export const addReportToDb= async (carId,id,nida,report_no,type_id,street_id,note_police,start,arrive,finish,source,description) => {
-    // if (!nida || !report_no || !period || !type_id || !source_id || !street_id || !start || !arrive || !finish  || !note_police) {
+  export const addReportToDb= async (
+    carId,
+    id,
+    nida,
+    report_no,
+    type_id,
+    street_id,
+    note_police,
+    source,
+    description,
+    lat,
+    lng,
+  ) => {
 
     const period =localStorage.getItem('period')
    const response = await axios.get(url,{
@@ -14,15 +26,14 @@ const url =`${apiUrl}/add-report-operations`
        id:id,
        nida:nida,
        period:period,
-       report_no:report_no,
+       report_no:36782922,
        type_id:type_id,
        source_id:source,
        street_id:street_id,
-       start:start,
-       arrive:arrive,
-       finish:finish,
        note_police:note_police,
        description:description,
+       lat:lat,
+       lng:lng,
        
       } });
 console.log(response.data)

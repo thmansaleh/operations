@@ -8,16 +8,17 @@ import ReportTypes from "./ReportTypes";
 import Times from "./Times";
 import Nida from "./Nida";
 import SaveBtn from "./SaveBtn";
-import { addReport } from "@/app/store/features/reports";
+import { add as addReport } from "@/app/store/features/addReport";
 import { useDispatch, useSelector } from "react-redux";
 import StreetName from "./StreetName";
 import ReportNoInput from "./ReportNoInput";
+import LatAndLng from "./LatAndLng";
 
 
 export default function AddReportModal() {
   const [openModal, setOpenModal] = useState(false);
-  const modalDispaly =useSelector(state=>state.reports.modalDispaly)
-  const report =useSelector(state=>state.reports.addReport)
+  const modalDispaly =useSelector(state=>state.addReport.modalDispaly)
+  const report =useSelector(state=>state.addReport)
   const dispatch=useDispatch()
 
 
@@ -32,16 +33,18 @@ export default function AddReportModal() {
         <div className=" flex gap-y-4 justify-center flex-col items-center">
 <div className="flex justify-center items-center gap-x-4">
   
-<ReportNoInput/>
+{/* <ReportNoInput/> */}
 <Nida />
+<Sources/>
+
 </div>
   <div className="flex justify-center items-center gap-x-4" >
-<Sources/>
 <ReportTypes/>
+<LatAndLng/>
   </div>
   <StreetName/>
 
-<Times/>
+{/* <Times/> */}
 
   <input value={report.note} onChange={e=>dispatch(addReport({action:'note',data:e.target.value}))} type="text" className=" focus:ring-gray-800 focus:border-gray-800 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  w-1/2 p-2.5  text-center" placeholder="الملاحظات" />
 

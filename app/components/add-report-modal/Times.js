@@ -1,10 +1,10 @@
-import { addReport } from "@/app/store/features/reports"
+import { add as addReport } from '@/app/store/features/addReport'
 import { useDispatch, useSelector } from "react-redux"
 
 
 function Times() {
     const dispatch =useDispatch()
-    const report =useSelector(state=>state.reports.addReport)
+    const report =useSelector(state=>state.addReport)
 
     
   return <div className="flex items-center justify-center gap-x-6">

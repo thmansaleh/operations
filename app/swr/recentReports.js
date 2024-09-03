@@ -6,12 +6,17 @@ import useSWR from 'swr'
 import { apiUrl } from '../constants';
 
 
-export  function swrReportsCount(){
+export  function swrRecentReports(){
 
- const url =`${apiUrl}/get-reports-count-op`
+ const url =`${apiUrl}/recent-reports`
   
 const fetcher =async ()=>{
-  const response = await axios.get(url)
+    const token=localStorage.getItem('token')
+  const response = await axios.get(url,{
+    headers: {
+      authorization: `${token}`
+  },
+  })
   return response.data
 }
  

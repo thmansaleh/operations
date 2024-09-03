@@ -12,24 +12,24 @@ function Table() {
 if(isLoading) return <SpinnerLoading/>
 if(data.length==0) return <div className='text-center mt-5 text-lg text-gray-700 font-semibold'>لاتوجد احداث</div>
   return (
-<div className="    shadow-md ">
-  <table className="w-full text-sm text-center  text-gray-500 ">
+<div className="   resize-x  shadow-md ">
+  <table className=" text-sm text-center  text-gray-500 ">
     <thead className="text-xs text-white uppercase bg-gray-600 ">
       <tr>
     
-        <th scope="col" className="px-6 py-3">
+        {/* <th scope="col" className="px-6 py-3">
           رقم الحدث
         </th>
         <th scope="col" className="px-6 py-3">
           مصدر الحدث
-        </th>
+        </th> */}
         <th scope="col" className="px-6 py-3">
           نوع الحدث
         </th>
         <th scope="col" className="px-6 py-3">
           النداء
         </th>
-        <th scope="col" className="px-6 py-3">
+        {/* <th scope="col" className="px-6 py-3">
           الاستلام
         </th>
         <th scope="col" className="px-6 py-3">
@@ -43,19 +43,19 @@ if(data.length==0) return <div className='text-center mt-5 text-lg text-gray-700
         </th>
         <th scope="col" className="px-6 py-3">
           
-        </th>
+        </th> */}
       </tr>
     </thead>
     <tbody>
     {data.map(report=>{
         return   <tr key={report.id} className="  border-b">
-        <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+        {/* <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
         {report.report_no}
         </th>
     
         <td className="px-6 py-4">
         {report.source_name}
-        </td>
+        </td> */}
         <td className="px-6 py-4">
         {report.type}
         </td>
@@ -63,7 +63,7 @@ if(data.length==0) return <div className='text-center mt-5 text-lg text-gray-700
         {report.nida}
 
         </td>
-        <td className="px-6 py-4">
+        {/* <td className="px-6 py-4">
         {!report.start?<div
         className='w-2 h-2 bg-yellow-400 rounded-full'></div>:report.start}
         </td>
@@ -77,14 +77,14 @@ if(data.length==0) return <div className='text-center mt-5 text-lg text-gray-700
         </td>
         <td className="px-6 py-4">
         {report.note_police}
-    </td>
-        <td className="px-6 py-4">
+    </td> */}
+        {/* <td className="px-6 py-4">
         <div className='flex items-center justify-center gap-x-4'>
           <EditBtn report={report}/>
           <DeleteBtn report={report}/>
           <DuplicateBtn report={report}/>
         </div>
-    </td>
+    </td> */}
       </tr>
     })}
      

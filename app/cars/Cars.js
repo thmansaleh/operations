@@ -16,7 +16,7 @@ function Cars() {
 
  if(data) return <div className="space-y-4 p-3 max-h-svh overflow-y-auto custom-scroll">
     {data.sort((a,b)=>a.nida - b.nida).map(car=>{
-      if(car.type=='patrol' & car.is_match)  return <div  className="bg-gray-200 rounded-lg p-3 flex gap-x-4 items-center" key={car.car_id}> 
+        return <div  className="bg-gray-200 rounded-lg p-3 flex gap-x-4 items-center" key={car.car_id}> 
 
  <AddDriver car={car}/>
 
@@ -27,11 +27,11 @@ function Cars() {
 :null}
 
 </div>
-<AddReportBtn car={car}/>
+{/* <AddReportBtn car={car}/> */}
 
 
 {/* <InformationBtn/> */}
-<CarDetails car={car}/>
+{/* <CarDetails car={car}/> */}
 
 
 </>

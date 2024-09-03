@@ -1,4 +1,4 @@
-import { addReport } from '@/app/store/features/reports'
+import { add as addReport } from '@/app/store/features/addReport'
 import { swrReportTypes } from '@/app/swr/reportTypes'
 import { Select } from 'flowbite-react'
 import React from 'react'
@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 function ReportTypes() {
     const dispatch =useDispatch()
-    const report =useSelector(state=>state.reports.addReport)
+    const report =useSelector(state=>state.addReport)
 
     const { data,isLoading  } = swrReportTypes()
 if(isLoading) return 'loading'

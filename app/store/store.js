@@ -5,8 +5,9 @@ import checkoutReducer from './features/checkout'
 import  cart from "./features/cart"
 import schedule from './features/schedule';
 import driver from './features/driver';
-import reports from './features/reports';
 import account from './features/account';
+import addReport  from './features/addReport';
+import reports from './features/reports';
 const store = configureStore({
     reducer: {
         account: account,
@@ -15,7 +16,8 @@ const store = configureStore({
         cart:cart,
         schedule:schedule,
         driver:driver,
-        reports:reports
+        reports:reports,
+        addReport:addReport
     },
   });
   
