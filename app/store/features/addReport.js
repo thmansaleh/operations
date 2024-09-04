@@ -9,7 +9,7 @@ const addReport= createSlice({
         id:null,
         nida:undefined,
         carId:null,
-        reportNo:'8765432',
+        reportNo:'',
         sourceId:'',
         typeId:'',
         start:'',
@@ -21,6 +21,7 @@ const addReport= createSlice({
         period:'',
         lat:'',
         lng:'',
+        locationName:'',
 },
   reducers: {
     add: (state, action) => {
@@ -58,7 +59,7 @@ const addReport= createSlice({
             break;
   
         case 'note':
-            state.addReport.note=action.payload.data
+            state.note=action.payload.data
             break;
         case 'modalDispaly':
             state.modalDispaly=action.payload.data
@@ -67,18 +68,11 @@ const addReport= createSlice({
             state.action=action.payload.data
             break;
         case 'location':
-            function parseCoordinates(coordinateString) {
-                const [latitude, longitude] = coordinateString.split(',').map(Number);
-                state.lat=latitude
-                state.lng=longitude
-
-        
-            }
-            
-            const coords = parseCoordinates(action.payload.data);
-            
-            // console.log(action.payload.data)
-            
+            state.lat=action.payload.data.lat
+            state.lng=action.payload.data.lng
+            break;
+        case 'locationName':
+            state.locationName=action.payload.data
             break;
  
       

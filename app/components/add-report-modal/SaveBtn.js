@@ -45,7 +45,8 @@ function SaveBtn({ index }) {
       report.sourceId,
       report.description,
       report.lat,
-      report.lng
+      report.lng,
+      report.locationName
     )
     setLoading(false)
     toast.success('تم اضافة الحدث بنجاح', {
@@ -65,7 +66,7 @@ function SaveBtn({ index }) {
   }
   return <>
 
-    <Button isProcessing={loading} gradientMonochrome="success" size='sm' onClick={add}>إنشاء</Button>
+    <Button isProcessing={loading} gradientMonochrome="success" size='sm' onClick={add}>إنشاء حدث</Button>
   </>
 
 }

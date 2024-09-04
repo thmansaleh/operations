@@ -2,11 +2,22 @@ import { Map, APIProvider, AdvancedMarker, Pin, InfoWindow } from "@vis.gl/react
 import { swrCars } from "../swr/cars"
 import { swrRecentReports } from "../swr/recentReports"
 function MapContent() {
+    const handleMapClick = (e) => {
+        // const lat = e.latLng.lat();
+        // const lng = e.latLng.lng();
+        // console.log("Latitude:", lat, "Longitude:", lng);
+        console.log(e.detail.latLng)
+    };
+
     const position={lat:25.179533,lng:55.315357}
     return <APIProvider apiKey="AIzaSyD7e4cuSEMpIyLgiLM5skxZ7S6F9DXtggE">
 
                <div className="h-screen w-full">
-                <Map  defaultZoom={12}  defaultCenter={position} mapId="a0e2b8d424136ecf">
+                <Map 
+                 defaultZoom={12}  
+                 defaultCenter={position} 
+                 onClick={handleMapClick}
+                 mapId="a0e2b8d424136ecf">
 <CarsMarkers/>
 <Reports/>
                 </Map>

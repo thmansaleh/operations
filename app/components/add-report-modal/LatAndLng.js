@@ -1,12 +1,29 @@
+import { getLocationName } from "@/app/services/helpers/getLocationName"
 import { add as addReport } from "@/app/store/features/addReport"
+import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 
 function LatAndLng() {
     const dispatch =useDispatch()
     const report =useSelector(state=>state.addReport)
+    const [name,setName]=useState('')
+    useEffect(() => {
+      const data=async ()=>{
+        const loca= await getLocationName(report.lat,report.lng)
+        // console.log(loca.results[0].formatted_address)
+        setName(loca.results[0].formatted_address)
+        dispatch(addReport({action:'locationName',data:loca.results[0].formatted_address}))
+        
+      }
+      data()
 
-    return  <input  onChange={e=>dispatch(addReport({action:'location',data:e.target.value}))} type="text" className="bg-gray-50 border focus:border-gray-800 border-gray-300 focus:ring-gray-800 text-gray-900 text-sm rounded-lg   p-2.5  text-center   flex-1" placeholder="خط الطول و العرض"
-/>
+    }, [])
+    
+    return  <div className="flex  my-3 items-center gap-x-3  text-base font-semibold">
+    <div>موقع الحدث</div>
+    :
+<div>{name}</div>
+</div>
 }
 
 export default LatAndLng

@@ -8,7 +8,7 @@ import { apiUrl } from '../constants';
 
 export  function swrMechanisms(){
 
-  const period =localStorage.getItem('period')
+  // const period =localStorage.getItem('period')
 
 //  const url =`https://express-rta.vercel.app/operations-mechanisms`
 const url =`${apiUrl}/operations-mechanisms`

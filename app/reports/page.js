@@ -6,21 +6,23 @@ import Table from './Table'
 import { useDispatch } from 'react-redux'
 import { addReport } from '../store/features/reports'
 import AddReportBtn from './AddReportBtn'
-
+import ReportDetails from './ReportDetails'
+import Reports from './Reports'
+import MapModal from './MapModal'
 function page() {
     const dispatch =useDispatch()
   return <>
-  <AddReportBtn/>
+  {/* <AddReportBtn/> */}
     <div className='p-3 space-y-3'>
-        <AddReportModal page='reports' carNida=''/>
      
+<MapModal/>
+<div className='flex h-[66vh] '>
+{/* <Table/> */}
+<Reports/>
+<ReportDetails/>
+  </div>
 
-<div className='flex '>
-<Table/>
-<div className='bg-gray-500 h-72 flex-1'>
-
-</div>
-  </div>    </div>
+    </div>
   </>
   
 }

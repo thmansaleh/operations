@@ -11,16 +11,18 @@ function StreetName() {
 
 if(isLoading) return 'loading'
 
-return <div className=" space-y-3">
+return <div className="flex items-center gap-x-3  text-base font-semibold">
+<div>الشارع</div>
+:
   <Select defaultValue={report.streetId}  onChange={e=>dispatch(addReport({action:'streetId',data:e.target.value}))} className=" w-fit" >
-  <option >الشارع</option>
+  <option disabled className='text-xl' >الشارع</option>
   {data.map(street=>{
-  return <option value={street.id} key={street.id}>{street.street_name} </option>
+  return <option className='text-lg' value={street.id} key={street.id}>{street.street_name} </option>
 })}
 </Select>
-<input  value={report.description} onChange={e=>dispatch(addReport({action:'description',data:e.target.value}))} type="text" className="focus:ring-gray-800 focus:border-gray-800 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg   p-2.5  text-center" placeholder="الوصف" />
 
 </div>
+{/* <input  value={report.description} onChange={e=>dispatch(addReport({action:'description',data:e.target.value}))} type="text" className="focus:ring-gray-800 focus:border-gray-800 bg-gray-50 border border-gray-300 text-gray-900  rounded-lg   p-2.5  text-center" placeholder="الوصف" /> */}
 }
 
 export default StreetName

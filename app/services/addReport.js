@@ -17,6 +17,7 @@ const url =`${apiUrl}/add-report-operations`
     description,
     lat,
     lng,
+    locationName
   ) => {
 
     const period =localStorage.getItem('period')
@@ -26,7 +27,7 @@ const url =`${apiUrl}/add-report-operations`
        id:id,
        nida:nida,
        period:period,
-       report_no:36782922,
+       report_no:generateRandomReportNumber(),
        type_id:type_id,
        source_id:source,
        street_id:street_id,
@@ -34,6 +35,7 @@ const url =`${apiUrl}/add-report-operations`
        description:description,
        lat:lat,
        lng:lng,
+       location_name:locationName,
        
       } });
 console.log(response.data)

@@ -1,6 +1,6 @@
 
+'use client'
 import axios from 'axios';
-
 import useSWR from 'swr'
 import { apiUrl } from '../constants';
 
