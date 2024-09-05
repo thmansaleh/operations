@@ -11,13 +11,13 @@ function StreetName() {
 
 if(isLoading) return 'loading'
 
-return <div className="flex items-center gap-x-3  text-base font-semibold">
+return <div className="flex items-center gap-x-3  text-sm font-semibold">
 <div>الشارع</div>
 :
   <Select defaultValue={report.streetId}  onChange={e=>dispatch(addReport({action:'streetId',data:e.target.value}))} className=" w-fit" >
-  <option disabled className='text-xl' >الشارع</option>
+  <option disabled className='text-sm' >الشارع</option>
   {data.map(street=>{
-  return <option className='text-lg' value={street.id} key={street.id}>{street.street_name} </option>
+  return <option className='text-sm' value={street.id} key={street.id}>{street.street_name} </option>
 })}
 </Select>
 

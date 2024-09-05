@@ -7,7 +7,7 @@ function Cars() {
     const { data , error, isLoading } = swrCars()
 const dispatch=useDispatch()
 if(isLoading) return "جاري التحميل ..."
-   if(data) return <div className="flex items-center text-base font-semibold gap-x-3">
+   if(data) return <div className="flex items-center text-sm font-semibold gap-x-3">
     
         <div>الدورية</div>
         :
@@ -15,9 +15,9 @@ if(isLoading) return "جاري التحميل ..."
    <Select    onChange={e=>{
     dispatch(addReport({action:'nida',data:{nida:data[e.target.value].nida,carId:data[e.target.value].car_history_id}}))
    }} className=" w-44" >
-    <option className="text-xl" ></option>
+    <option className="text-sm" ></option>
          {data.map((car,i)=>{
-          if(car.is_match) return <option className="text-xl"  value={i} key={car.car_id}>{car.nida} </option>
+          if(car.is_match) return <option className="text-sm"  value={i} key={car.car_id}>{car.nida} </option>
          })}
      </Select> 
     

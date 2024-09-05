@@ -19,7 +19,7 @@ function LatAndLng() {
 
     }, [])
     
-    return  <div className="flex  my-3 items-center gap-x-3  text-base font-semibold">
+    return  <div className="flex  my-3 items-center gap-x-3  text-sm font-semibold">
     <div>موقع الحدث</div>
     :
 <div>{name}</div>

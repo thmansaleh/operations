@@ -10,15 +10,15 @@ function ReportTypes() {
 
     const { data,isLoading  } = swrReportTypes()
 if(isLoading) return 'loading'
-  return <div className="flex items-center text-base font-semibold gap-x-3">
+  return <div className="flex items-center text-sm font-semibold gap-x-3">
     
   <div>نوع الحدث</div>
   :
    
   <Select defaultValue={report.typeId}  onChange={e=>dispatch(addReport({action:'typeId',data:e.target.value}))} className=" w-44" >
-     <option disabled  className='text-xl'>نوع الحدث</option>
+     <option disabled  className='text-sm'>نوع الحدث</option>
           {data.map(type=>{
-            return <option  className='text-xl' value={type.id} key={type.id}>{type.type} </option>
+            return <option  className='text-sm' value={type.id} key={type.id}>{type.type} </option>
           })}
       </Select>  
       </div>

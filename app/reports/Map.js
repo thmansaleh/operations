@@ -29,7 +29,10 @@ console.log(report)
                     defaultZoom={12}  
                     defaultCenter={position} 
                     onClick={handleMapClick}
+                    mapTypeControl={false}
+                    streetViewControl={false}
                     mapId="a0e2b8d424136ecf">
+                        
                     {pins.map((pin, index) => (
                         <AdvancedMarker
                             key={index}

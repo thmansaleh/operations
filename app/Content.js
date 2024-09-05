@@ -37,13 +37,12 @@ console.log('loginnn',data)
   //  if(!login) return <Login/>
   return <div>
     <AddReportModal/>
-<Header/>
-    <div >
+{/* <Header/> */}
     <Tabs/>
     <div className="w-full p-3">  
         {children}
     </div>
-  </div>  
+    
   </div>
 }
 

@@ -8,7 +8,7 @@ export default function CarsTable({cars}) {
   return (
     <div className="overflow-x-auto ">
       <Table >
-        <Table.Head className="text-center  font-semibold text-base">
+        <Table.Head className="text-center  font-bold text-xs">
           <Table.HeadCell className=" rounded-none bg-gray-200">المركبة</Table.HeadCell>
           <Table.HeadCell className=" rounded-none bg-gray-200">السائق</Table.HeadCell>
           <Table.HeadCell className="rounded-none bg-gray-200">رقم الهاتف</Table.HeadCell>

@@ -9,7 +9,7 @@ function Sources() {
 
     const { data ,isLoading } = swrSources()
 if(isLoading) return 'looading'
-if(data) return <div className="flex items-center font-semibold text-base gap-x-3">
+if(data) return <div className="flex items-center font-semibold text-sm gap-x-3">
           <div>مصدر الحدث</div>
 
           :
@@ -17,7 +17,7 @@ if(data) return <div className="flex items-center font-semibold text-base gap-x-
   <Select defaultValue={report.sourceId}   onChange={e=>dispatch(addReport({action:'sourceId',data:e.target.value}))} className=" w-44 text-2xl" >
      {/* <option  className=" w-32 text-xl" >أختر المصدر</option> */}
      {data.map(source=>{
-            return <option className='text-xl' value={source.id} key={source.id}>{source.source_name} </option>
+            return <option className='text-sm' value={source.id} key={source.id}>{source.source_name} </option>
           })}
       </Select>  
 </div>

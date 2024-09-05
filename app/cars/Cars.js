@@ -1,13 +1,8 @@
 import { Button } from "flowbite-react"
 import { swrCars } from "../swr/cars"
 import AddDriver from "./AddDriver"
-import AddReportModal from "../components/add-report-modal/AddRportModal"
 import { useDispatch } from "react-redux"
-import { addReport } from "../store/features/reports"
-import InformationBtn from "./InformationBtn"
-import AddReportBtn from "./AddReportBtn"
 import SpinnerLoading from "../components/SpinnerLoading"
-import CarDetails from "./CarDetails"
 
 function Cars() {
     const dispatch =useDispatch()

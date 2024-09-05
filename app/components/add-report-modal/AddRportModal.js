@@ -5,13 +5,11 @@ import { Button, Modal, Select } from "flowbite-react";
 import { useState } from "react";
 import Sources from "./Sources";
 import ReportTypes from "./ReportTypes";
-import Times from "./Times";
 import Nida from "./Nida";
 import SaveBtn from "./SaveBtn";
 import { add as addReport } from "@/app/store/features/addReport";
 import { useDispatch, useSelector } from "react-redux";
 import StreetName from "./StreetName";
-import ReportNoInput from "./ReportNoInput";
 import LatAndLng from "./LatAndLng";
 import Description from "./Description";
 import Note from "./Note";
@@ -28,7 +26,7 @@ export default function AddReportModal() {
     <>
   
 
-      <Modal size='5xl' show={modalDispaly} onClose={() =>      dispatch(addReport({action:'modalDispaly',data:false}))
+      <Modal position='top-center' size='5xl' show={modalDispaly} onClose={() =>      dispatch(addReport({action:'modalDispaly',data:false}))
 }>
         <Modal.Header ></Modal.Header>
         <Modal.Body>
