@@ -1,0 +1,19 @@
+.select-cars:checked + label >div>div>svg{
+    /* background: rgb(198, 52, 52) !important; */
+    /* background: rgb(8 165 11)!important; */
+    fill: rgb(8 165 11)!important;
+    }
+    .select-cars:checked + label >div>div{
+        /* background: rgb(198, 52, 52) !important; */
+        /* background: rgb(8 165 11)!important; */
+        /* fill: rgb(8 165 11)!important; */
+        color:rgb(8 165 11)!important ;
+        }
+    /* .select-cars:checked + label >div>div{
+    color: white !important;
+    } */
+    /* .select-cars:checked + label >div>svg{
+    fill: white;
+    } */
+    
+    

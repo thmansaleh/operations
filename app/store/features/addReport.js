@@ -19,8 +19,8 @@ const addReport= createSlice({
         description:'',
         note:'',
         period:'',
-        lat:'',
-        lng:'',
+        lat:'25.233345600491855',
+        lng:'55.31997758500511',
         locationName:'',
 },
   reducers: {
