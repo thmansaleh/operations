@@ -2,8 +2,6 @@
 import Cars from "./Cars"
 import Drivers from "./Drivers"
 import Mechanisms from "./Mechanisms"
-// import {ProgressBar} from 'react-customizable-progressbar';
-
 import ReportsCount from "./ReportsCount"
 import Sources from "./Sources"
 import Streets from "./Streets"

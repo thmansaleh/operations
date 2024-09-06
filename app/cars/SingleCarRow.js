@@ -6,14 +6,14 @@ import CarIcon from "./CarIcon";
 
 function SingleCarRow({car,key}) {
   return (
-    <Table.Row key={key} className="bg-white p-0 text-center  dark:border-gray-700 dark:bg-gray-800">
-    <Table.Cell className=" p-2 text-center  items-center flex justify-center font-medium text-gray-900 ">
+    <Table.Row key={key} className="bg-white p-0 text-center text-xs font-semibold  text-black">
+    <Table.Cell className=" text-center  items-center flex justify-center font-medium text-gray-900 ">
      <CarIcon car={car}/>
     </Table.Cell>
-    <Table.Cell className="p-2">
+    <Table.Cell >
       <Drivers car={car}/>
     </Table.Cell>
-    <Table.Cell className="p-0">
+    <Table.Cell >
         <Phones car={car}/>
     </Table.Cell>
     <Table.Cell className=" flex justify-center items-center">

@@ -1,9 +1,14 @@
+import { Spinner } from "flowbite-react"
 import { swrReport } from "../swr/report"
 import ReportLocation from "./ReportLocation"
+import { useSelector } from "react-redux"
 
 function ReportDetails() {
     const { data , error, isLoading,mutate } = swrReport()
-if(isLoading) return 'loading'
+    const reportId=useSelector(state=>state.reports.reportId)
+if(!reportId) return <div className="flex justify-center w-full items-center  text-sm font-semibold">انقر على الحدث لعرض التفاصيل</div>
+
+if(isLoading) return <div className="flex justify-center w-full items-center"><Spinner color="success" /></div>
 if(data) console.log(data)
 if(data)  return <div className='bg-gray-1003  space-y-3 text-sm flex  font-semibold  pr-10 flex-col text-gray-900 flex-1'>
 <div className=" bg-gray-200   rounded-lg font-semibold py-2 px-3 text-sm text-green-600"> 

@@ -34,7 +34,7 @@ console.log('loginnn',data)
     }, [])
     
     const login =useSelector(state=>state.account.login)
-  //  if(!login) return <Login/>
+   if(!login) return <Login/>
   return <div>
     <AddReportModal/>
 {/* <Header/> */}

@@ -9,7 +9,7 @@ export default function ReportModl() {
 
   return (
     <>
-      <Button onClick={() => setOpenModal(true)}>Toggle modal</Button>
+      {/* <Button onClick={() => setOpenModal(true)}>Toggle modal</Button> */}
       <Modal show={openModal} onClose={() => setOpenModal(false)}>
         <Modal.Header></Modal.Header>
         <Modal.Body>

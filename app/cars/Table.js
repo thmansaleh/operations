@@ -6,7 +6,7 @@ import SingleCarRow from "./SingleCarRow";
 
 export default function CarsTable({cars}) {
   return (
-    <div className="overflow-x-auto ">
+    <div className="overflow-x-auto   ">
       <Table >
         <Table.Head className="text-center  font-bold text-xs">
           <Table.HeadCell className=" rounded-none bg-gray-200">المركبة</Table.HeadCell>

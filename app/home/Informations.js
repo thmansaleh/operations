@@ -1,8 +1,6 @@
 import { swrReportsToday } from "../swr/reportsToday"
-import { swrSourcesReports } from "../swr/sourcesReports"
 
 function Informations() {
-  // const {data,error,isLoading} = swrSourcesReports()
   const {data,error,isLoading} = swrReportsToday()
 
 if(isLoading) return 'جاري التحميل'
