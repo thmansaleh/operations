@@ -14,6 +14,7 @@ import LatAndLng from "./LatAndLng";
 import Description from "./Description";
 import Note from "./Note";
 import SelectCar from "./SelectCar";
+import SelectPatrol from "./SelectPatrol";
 
 
 export default function AddReportModal() {
@@ -42,6 +43,7 @@ export default function AddReportModal() {
 
           <div className="space-y-3">
           <Sources/>
+          {/* <SelectPatrol/> */}
           {/* <Nida /> */}
 
           </div>

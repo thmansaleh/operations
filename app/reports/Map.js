@@ -31,6 +31,8 @@ console.log(report)
                     onClick={handleMapClick}
                     mapTypeControl={false}
                     streetViewControl={false}
+                    mapTypeId="hybrid"
+
                     mapId="a0e2b8d424136ecf">
                         
                     {pins.map((pin, index) => (
