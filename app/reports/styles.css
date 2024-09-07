@@ -1,7 +1,8 @@
 .reportsInput:checked + label >div{
     /* background: rgb(198, 52, 52) !important; */
-    background: rgb(6, 173, 33) !important;
-    color:white ;
+    /* background: rgb(6, 173, 33) !important; */
+    /* color:white ; */
+    border-bottom: 2px solid green;
     }
     /* .tabs:checked + label >div>div{
     color: white !important;

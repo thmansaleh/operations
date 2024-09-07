@@ -1,7 +1,7 @@
 import { Spinner } from "flowbite-react"
-import ReportDetails from "./ReportDetails"
 import Reports from "./Reports"
 import { swrReportsToday } from "../swr/reportsToday"
+import ReportContent from "./report-details/ReportContent"
 
 function Content() {
     const { data ,isLoading } = swrReportsToday('المسائية')
@@ -11,7 +11,7 @@ function Content() {
 if(data){
     if(data.length>0) return <div className='flex h-[66vh] '>
     <Reports/>
-    <ReportDetails/>
+    <ReportContent/>
       </div>
 }else return <div className='flex h-[66vh]   items-center justify-center'>
 لاتوجد أحداث لعرضها

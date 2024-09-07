@@ -1,0 +1,11 @@
+.reports-filter:checked + label >div{
+    /* background: rgb(198, 52, 52) !important; */
+    background: rgb(8 165 11)!important;
+    color: white;
+    }
+  
+.reports-filter:checked + label >div>svg{
+    fill: white;
+
+    }
+  
