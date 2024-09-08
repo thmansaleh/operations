@@ -36,10 +36,12 @@ console.log('loginnn',data)
     const login =useSelector(state=>state.account.login)
    if(!login) return <Login/>
   return <div>
+    <Header/>
     <AddReportModal/>
 {/* <Header/> */}
     <Tabs/>
     <div className="w-full p-3">  
+
         {children}
     </div>
     

@@ -2,11 +2,15 @@ import { Map, APIProvider, AdvancedMarker, Pin, InfoWindow } from "@vis.gl/react
 import { swrCars } from "../swr/cars"
 import { swrRecentReports } from "../swr/recentReports"
 import CarOutside from "./CarOutside"
+import { useDispatch } from "react-redux"
+import { actions, setReportId } from "../store/features/reports"
 function MapContent() {
     
 
     const position={lat:25.179533,lng:55.315357}
-    return <APIProvider apiKey="AIzaSyD7e4cuSEMpIyLgiLM5skxZ7S6F9DXtggE">
+    return <APIProvider
+     apiKey="AIzaSyD7e4cuSEMpIyLgiLM5skxZ7S6F9DXtggE"
+     >
 
                <div className="h-screen w-full">
                 <Map 
@@ -49,15 +53,21 @@ const CarsMarkers=()=>{
 }
 const Reports=()=>{
     const { data , error, isLoading } = swrRecentReports()
-    const handleMapClick = (e) => {
+    const dispatch=useDispatch()
+    const handleMapClick = (id) => {
 
-        console.log(0)
+        console.log(id)
+        dispatch(setReportId(id))
+        dispatch(actions({action:'reportNav',data:'details'}))
+  
+        dispatch(actions({action:'mapReportModal',data:true}))
+        
     };
 
    if(data)  return <>
      {data.map(report=>{
          return <AdvancedMarker
-         onClick={handleMapClick}
+         onClick={()=>handleMapClick(report.id)}
 
           position={{lat:Number(report.lat),lng:Number(report.lng)}} key={report.lat}>
            <div class="flex flex-col items-center gap-y-2">

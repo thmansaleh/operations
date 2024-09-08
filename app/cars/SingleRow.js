@@ -4,6 +4,8 @@ import Phones from './Phones'
 import CarIcon from './CarIcon'
 import Distance from './Distance'
 import RecoverIcon from './RecoveryIcon'
+import { getLocationName } from '../services/helpers/getLocationName'
+import { getTimePassedInArabic } from '../services/helpers/getTimePassedInArabic'
 
 function SingleRow({car}) {
   return (
@@ -19,7 +21,7 @@ function SingleRow({car}) {
 
 
       <td>{car.is_match?new Date(car.date).toLocaleTimeString():null}</td>
-      {/* <td className=' text-green-500 font-semibold'>متصل</td> */}
+      {/* <td className=' text-green-500 font-semibold'>{getTimePassedInArabic(new Date(car.date),new Date().toISOString())}</td> */}
       <td className=' text-green-500 font-semibold'>{car.is_match?new Date(car.last_update).toLocaleTimeString():null}</td>
       <td className=' text-green-500 font-semibold'>
         <Distance car={car}/>

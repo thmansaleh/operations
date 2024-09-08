@@ -42,7 +42,7 @@ if(nav=='last'){
         return  <div >
         <input defaultChecked={filter.nav=='last'?true:false} className='hidden reports-filter' name='reports-filter' id={filter.nav} type="radio"/>
         <label htmlFor={filter.nav}>
-            <div onClick={()=>setNav(filter.nav)} className="flex items-center gap-x-2 w-fit ring-1 ring-gray-400 rounded-lg p-1">
+            <div onClick={()=>setNav(filter.nav)} className="flex items-center gap-x-2 w-fit bg-gray-200 rounded-lg p-1">
                 {filter.icon}
 <div>{filter.title}</div>
             </div>

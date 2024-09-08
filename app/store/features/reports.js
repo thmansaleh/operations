@@ -7,6 +7,7 @@ const reports= createSlice({
     reportId:null,
     reportNav:'details',
     filterNav:'current',
+    mapReportModal:false,
     
 
    
@@ -23,6 +24,9 @@ const reports= createSlice({
             break;
         case 'filterNav':
             state.filterNav=action.payload.data
+            break;
+        case 'mapReportModal':
+            state.mapReportModal=action.payload.data
             break;
    
 

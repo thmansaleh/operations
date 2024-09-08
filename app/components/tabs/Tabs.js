@@ -52,7 +52,7 @@ export default function Tabs() {
     router.push(tab.route)
 }} className="hidden tabs" type="radio" id={tab.route} name="tabs"/>  
 <label htmlFor={tab.route} >
-<div className="flex cursor-pointer bg-gray-100  px-4  items-center gap-x-2 rounded-lg p-[7px]">
+<div className="flex cursor-pointer ring-1 ring-gray-200  px-4  items-center gap-x-2 rounded-lg p-[7px]">
 {tab.icon}
 <div className="text-sm font-semibold text-gray-800">{tab.tab}</div>
 </div>

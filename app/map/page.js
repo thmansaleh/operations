@@ -5,6 +5,7 @@ import Map from "./Map"
 import { getDrivingDistance } from "../services/helpers/getDrivingDistance"
 import ReportModl from "./ReportModal"
 import Filter from "./filter/Filter"
+import ReportDetailsModal from "./ReportDetailsModal"
 
 function page() {
   // useEffect(() => {
@@ -18,6 +19,7 @@ function page() {
   return (
     <div>
       {/* <ReportModl/> */}
+      <ReportDetailsModal/>
       <Filter/>
         <Map/>
 

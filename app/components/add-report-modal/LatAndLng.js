@@ -11,8 +11,9 @@ function LatAndLng() {
       const data=async ()=>{
         const loca= await getLocationName(report.lat,report.lng)
         // console.log(loca.results[0].formatted_address)
-        setName(loca.results[0].formatted_address)
-        dispatch(addReport({action:'locationName',data:loca.results[0].formatted_address}))
+        setName(loca)
+        // console.log(` ${loca.address.road} ${loca.address.suburb} `,loca)
+        dispatch(addReport({action:'locationName',data:loca}))
         
       }
       data()

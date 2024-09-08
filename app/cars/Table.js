@@ -1,28 +1,33 @@
+import React from 'react'
+// import Drivers from './Drivers'
+import SingleRow from './SingleRow'
 
-"use client";
-
-import { Table } from "flowbite-react";
-import SingleCarRow from "./SingleCarRow";
-
-export default function CarsTable({cars}) {
+function Test( {cars}) {
   return (
-    <div className="overflow-x-auto   ">
-      <Table >
-        <Table.Head className="text-center  font-bold text-xs">
-          <Table.HeadCell className=" rounded-none bg-gray-200">المركبة</Table.HeadCell>
-          <Table.HeadCell className=" rounded-none bg-gray-200">السائق</Table.HeadCell>
-          <Table.HeadCell className="rounded-none bg-gray-200">رقم الهاتف</Table.HeadCell>
-          <Table.HeadCell className="rounded-none bg-gray-200">وقت استلام الدورية</Table.HeadCell>
-       
-        </Table.Head>
-        <Table.Body className="divide-y">
-  
-          {cars.map(car=>{
-            return <SingleCarRow key={car.car_id} car={car}/>
-          })}
-          
-        </Table.Body>
-      </Table>
+    <div>
+        <table class=" w-full  text-xs font-semibold">
+  <thead className=' text-center  bg-gray-300  h-8      font-semibold text-gray-950 w-full'>
+    <tr >
+      <th>الحالة</th>
+      <th>الدورية</th>
+      <th>السائق</th>
+      <th>رقم الهاتف</th>
+      <th>وقت استلام الدورية</th>
+      <th>اخر تحديث للموقع</th>
+      {/* <th>اخر تحديث للموقع</th> */}
+      <th>بعد الدورية عن التمركز</th>
+    </tr>
+  </thead>
+  <tbody className=' text-center'>
+    
+    {cars.sort((a,b)=>a.nida - b.nida).map(car=>{
+        return <SingleRow car={car}/>
+    })}
+
+  </tbody>
+</table>
     </div>
-  );
+  )
 }
+
+export default Test

@@ -23,7 +23,9 @@ console.log(report)
     const position = { lat: 25.179533, lng: 55.315357 };
 
     return (
-        <APIProvider apiKey="AIzaSyD7e4cuSEMpIyLgiLM5skxZ7S6F9DXtggE">
+        <APIProvider
+         apiKey="AIzaSyD7e4cuSEMpIyLgiLM5skxZ7S6F9DXtggE"
+         >
             <div className="h-screen w-full">
                 <Map 
                     defaultZoom={12}  
