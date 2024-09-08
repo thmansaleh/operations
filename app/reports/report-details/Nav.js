@@ -1,8 +1,10 @@
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import './styles.css'
 import { actions } from '@/app/store/features/reports'
 function Nav() {
     const dispatch=useDispatch()
+    const currentNav=useSelector(state=>state.reports.reportNav)
+
     const data=[
         {
             title:'تفاصيل الحدث',
@@ -21,19 +23,20 @@ function Nav() {
         {
             title:'صور الحدث',
             nav:'media',
-            icon:<svg className="w-5 h-5 fill-gray-800" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="200px" width="200px" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M21 6h-3.17L16 4h-6v2h5.12l1.83 2H21v12H5v-9H3v9c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM8 14c0 2.76 2.24 5 5 5s5-2.24 5-5-2.24-5-5-5-5 2.24-5 5zm5-3c1.65 0 3 1.35 3 3s-1.35 3-3 3-3-1.35-3-3 1.35-3 3-3zM5 6h3V4H5V1H3v3H0v2h3v3h2z"></path></svg>               },
-    ]
+            icon:
+<svg className="w-5 h-5 fill-gray-800"  stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="200px" width="200px" xmlns="http://www.w3.org/2000/svg"><circle cx="256" cy="280" r="63"></circle><path d="M440 96h-88l-32-32H192l-32 32H72c-22.092 0-40 17.908-40 40v272c0 22.092 17.908 40 40 40h368c22.092 0 40-17.908 40-40V136c0-22.092-17.908-40-40-40zM256 392c-61.855 0-112-50.145-112-112s50.145-112 112-112 112 50.145 112 112-50.145 112-112 112z"></path></svg>   }
+   ]
     const setNav=(nav)=>{
-dispatch(actions({action:'nav',data:nav}))
+dispatch(actions({action:'reportNav',data:nav}))
 console.log(nav)
     }
   return (
     <div className=" text-xs font-semibold flex gap-x-4  to-gray-800">
        {data.map(nav=>{
-        return  <div >
-        <input className='hidden report-nav' name='reports-filter' id={nav.nav} type="radio"/>
+        return  <div key={nav.nav}  >
+        <input checked={currentNav==nav.nav?true:null} className='hidden report-nav' name='reports-nav' id={nav.nav} type="radio"/>
         <label htmlFor={nav.nav}>
-            <div onClick={()=>setNav(nav.nav)} className="flex items-center gap-x-2 w-fit  rournded-lg p-1">
+            <div onClick={()=>setNav(nav.nav)} className="flex cursor-pointer select-none items-center gap-x-2 w-fit  rournded-lg p-1">
                 {nav.icon}
 <div>{nav.title}</div>
             </div>

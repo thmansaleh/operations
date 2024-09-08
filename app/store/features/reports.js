@@ -5,7 +5,8 @@ const reports= createSlice({
   name: 'reports',
   initialState: {
     reportId:null,
-    nav:'details',
+    reportNav:'details',
+    filterNav:'current',
     
 
    
@@ -17,8 +18,11 @@ const reports= createSlice({
     actions: (state, action) => {
          switch (action.payload.action) {
      
-        case 'nav':
-            state.nav=action.payload.data
+        case 'reportNav':
+            state.reportNav=action.payload.data
+            break;
+        case 'filterNav':
+            state.filterNav=action.payload.data
             break;
    
 

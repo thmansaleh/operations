@@ -19,7 +19,8 @@
     "react-dom": "^18",
     "react-redux": "^9.1.2",
     "react-toastify": "^10.0.5",
-    "swr": "^2.2.5"
+    "swr": "^2.2.5",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "postcss": "^8",

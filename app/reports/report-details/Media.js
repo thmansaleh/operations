@@ -1,7 +1,7 @@
 
 function Media() {
   return (
-    <div>Media</div>
+    <div className=" text-center text-gray-800 mt-4 text-xs font-semibold">لاتوجد صور</div>
   )
 }
 
