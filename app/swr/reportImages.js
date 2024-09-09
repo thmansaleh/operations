@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import useSWR from 'swr'
 import { apiUrl } from '../constants';
-
+import { useSelector } from 'react-redux'
 
 export  function swrReportImages(){
     const reportId=useSelector(state=>state.reports.reportId)
