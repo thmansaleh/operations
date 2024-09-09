@@ -1,9 +1,9 @@
 
 
 import { Carousel } from "flowbite-react";
-import { swrReportImages } from '@/app/swr/report'
+import { swrReportImages } from '@/app/swr/reportImages'
 export function Component() {
-
+    const { data , error, isLoading,mutate } = swrReportImages()
 
   return (
     <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
