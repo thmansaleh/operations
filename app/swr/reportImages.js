@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux'
 
 export  function swrReportImages(){
     const reportId=useSelector(state=>state.reports.reportId)
- const url =`${apiUrl}/ge-report-images`
+ const url =`${apiUrl}/get-report-images`
 
 const fetcher =async ()=>{
     const token=localStorage.getItem('token')
