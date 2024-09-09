@@ -13,16 +13,16 @@ export  function swrReportImages(){
 const fetcher =async ()=>{
     const token=localStorage.getItem('token')
   const response = await axios.get(url,{
-   
+   params:{
+    report_id:reportId
+  }
   })
   return response.data
 }
 
 const { data , error, isLoading ,mutate} = useSWR(url,fetcher,{
         // refreshInterval: 2000 
-  params:{
-    report_id:reportId
-  }
+  
 })
 return {
   data,
