@@ -2,7 +2,7 @@
 
 import { Carousel } from "flowbite-react";
 import { swrReportImages } from '@/app/swr/reportImages'
-export function Component() {
+export default function Component() {
     const { data , error, isLoading,mutate } = swrReportImages()
 
   if(data) return (
