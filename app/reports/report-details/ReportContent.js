@@ -3,7 +3,7 @@ import ReportDetails from './ReportDetails'
 import Nav from './Nav'
 import { swrReport } from '@/app/swr/report'
 import Status from './Status'
-import Media from './Media'
+import Media from './media/Media'
 import Vehicles from './Vehicles'
 import { Spinner } from 'flowbite-react'
 
