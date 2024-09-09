@@ -7,7 +7,7 @@ import { apiUrl } from '../constants';
 
 
 export  function swrReportImages(){
-
+    const reportId=useSelector(state=>state.reports.reportId)
  const url =`${apiUrl}/ge-report-images`
 
 const fetcher =async ()=>{
