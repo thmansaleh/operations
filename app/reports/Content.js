@@ -13,7 +13,7 @@ if(data){
     <Reports/>
     <ReportContent/>
       </div>
-      return <div className='flex h-[66vh]   items-center justify-center'>
+      return <div className='flex h-[66vh]    text-base font-semibold from-gray-900 items-center justify-center'>
       لاتوجد أحداث لعرضها
         </div>
 } 
