@@ -9,9 +9,14 @@ export function swrStreestReorts(){
     const period =localStorage.getItem('period')
 //  const url =`https://express-rta.vercel.app/streets-reports-op?period=${period}`
 const url =`${apiUrl}/streets-reports-op?period=${period}`
+const token=localStorage.getItem('token')
 
   const fetcher = async () => {
-   const response = await axios.get(url);
+   const response = await axios.get(url,{
+    headers: {
+      authorization: `${token}`
+  },
+   });
 
    return response.data;
  };

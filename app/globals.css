@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-.ripple-circle {
+.ripple-red-circle {
     position: relative;
     /* display: inline-block; */
     width: 20px;
@@ -9,14 +9,42 @@
     /* background-color: red; */
     border-radius: 50%;
     cursor: pointer;
-    animation: ripple 1.7s infinite ease-out;
+    animation: ripple-red-circle 1.7s infinite ease-out;
 }
 
-@keyframes ripple {
+@keyframes ripple-red-circle {
     0% {
-        box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.5),
-                    0 0 0 5px rgba(255, 0, 0, 0.3),
+        box-shadow: 0 0 0 0 #ff000080,
+                    0 0 0 5px rgba(235, 33, 33, 0.3),
                     0 0 0 10px rgba(255, 0, 0, 0.1);
+    }
+    100% {
+        box-shadow: 0 0 0 10px rgba(255, 0, 0, 0),
+                    0 0 0 15px #ff000080,
+                    0 0 0 20px rgba(225, 19, 19, 0);
+    }
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.ripple-yellow-circle {
+    position: relative;
+    /* display: inline-block; */
+    width: 20px;
+    height: 20px;
+    /* background-color: red; */
+    border-radius: 50%;
+    cursor: pointer;
+    animation: ripple-yellow-circle 1.7s infinite ease-out;
+}
+
+@keyframes ripple-yellow-circle {
+    0% {
+        box-shadow: 0 0 0 0 rgba(239, 185, 7, 0.5),
+                    0 0 0 5px rgba(216, 172, 9, 0.3),
+                    0 0 0 10px rgba(202, 216, 7, 0.865);
     }
     100% {
         box-shadow: 0 0 0 10px rgba(255, 0, 0, 0),

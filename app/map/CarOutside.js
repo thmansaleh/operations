@@ -1,8 +1,12 @@
 import { getDistanceFromCenter } from '../services/getDistanceFromCenter'
+import { isMoreThanHourAgo } from '../services/helpers/isMoreThanHourAgo'
 function CarOutside({point}) {
     const distance=getDistanceFromCenter(point.lat,point.lng,point.current_lat,point.current_lng)
 
-if(Number(distance)>1 & point.is_match)return  <div className="bg-red-600 ripple-circle flex items-center justify-center">
+if(Number(distance)>1 & point.is_match)return  <div 
+className={isMoreThanHourAgo(point.last_update)?'bg-yellow-400 ripple-yellow-circle flex items-center justify-center':'bg-red-600 ripple-red-circle flex items-center justify-center'}
+// className="bg-red-600 ripple-red-circle flex items-center justify-center"
+>
 <span className="text-xs text-white">
   {point.nida}</span>
 

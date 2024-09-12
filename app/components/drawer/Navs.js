@@ -63,7 +63,7 @@ export default function Navs() {
     router.push(tab.route)
 }} className="hidden drawer-tabs" type="radio" id={tab.route} name="tabs"/>  
 <label htmlFor={tab.route} >
-<div className="flex cursor-pointer   items-center gap-x-2 rounded-lg p-[7px]">
+<div className="flex cursor-pointer  hover:bg-gray-100  items-center gap-x-2 rounded-lg p-[7px]">
 {tab.icon}
 <div className="text-sm font-semibold text-gray-800">{tab.tab}</div>
 </div>

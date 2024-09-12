@@ -6,12 +6,16 @@ import useSWR from 'swr'
 import { apiUrl } from '../constants';
 
 export function swrReportsToday(){
-  const period =localStorage.getItem('period')
 
-const url =`${apiUrl}/get-reports-for-today?period=${period}`
+const url =`${apiUrl}/get-reports-for-today`
+const token=localStorage.getItem('token')
 
   const fetcher = async () => {
-   const response = await axios.get(url);
+   const response = await axios.get(url,{
+    headers: {
+      authorization: `${token}`
+  },
+   });
 
    return response.data;
  };
