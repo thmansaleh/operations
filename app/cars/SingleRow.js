@@ -27,7 +27,7 @@ function SingleRow({car}) {
       <td className=' text-green-500 font-semibold'>
         <Distance car={car}/>
       </td>
-      <td><ReportsCount nida={car.nida}/></td>
+      <td>{car.is_match?<ReportsCount nida={car.nida}/>:null}</td>
 
     </tr>
   )
