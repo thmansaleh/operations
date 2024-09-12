@@ -1,12 +1,9 @@
 'use client'
 
-import { useDispatch } from 'react-redux'
-
 import Content from './Content'
 import Filter from './filter/Filter'
 import AddReportBtn from './AddReportBtn'
 function page() {
-    const dispatch =useDispatch()
 
   return <>
     <div className=' space-y-3'>

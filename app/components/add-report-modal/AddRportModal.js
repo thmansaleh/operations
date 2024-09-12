@@ -1,7 +1,7 @@
 
 "use client";
 
-import { Button, Modal, Select } from "flowbite-react";
+import { Modal, Select } from "flowbite-react";
 import { useState } from "react";
 import Sources from "./Sources";
 import ReportTypes from "./ReportTypes";
@@ -10,11 +10,10 @@ import SaveBtn from "./SaveBtn";
 import { add as addReport } from "@/app/store/features/addReport";
 import { useDispatch, useSelector } from "react-redux";
 import StreetName from "./StreetName";
-import LatAndLng from "./LatAndLng";
 import Description from "./Description";
 import Note from "./Note";
 import SelectCar from "./SelectCar";
-import SelectPatrol from "./SelectPatrol";
+import LocationName from "./LocationName";
 
 
 export default function AddReportModal() {
@@ -22,7 +21,6 @@ export default function AddReportModal() {
   const modalDispaly =useSelector(state=>state.addReport.modalDispaly)
   const report =useSelector(state=>state.addReport)
   const dispatch=useDispatch()
-
 
   return (
     <>
@@ -32,28 +30,25 @@ export default function AddReportModal() {
 }>
         <Modal.Header ></Modal.Header>
         <Modal.Body>
-          <LatAndLng/>
-        <div className=" flex  gap-x-20">
-          <div className="space-y-3">
-          <ReportTypes/>
-          <StreetName/>
-          <Description/>
-
-          </div>
-
-          <div className="space-y-3">
-          <Sources/>
-          {/* <SelectPatrol/> */}
-          {/* <Nida /> */}
-
-          </div>
-
-  
-{/* <Times/> */}
-
-
-</div>
-<Note/>
+          <table>
+            <tbody className=" text-sm font-semibold">
+              <LocationName/>
+             <tr className="py-2">
+             <Sources/>
+             <ReportTypes/>
+             </tr >
+          
+             <tr > 
+             <StreetName/>
+             <Description/>
+             </tr>
+             <tr > 
+             <Note/>
+             </tr>
+         
+            </tbody>
+          </table>
+       
 <SelectCar/>
 
 

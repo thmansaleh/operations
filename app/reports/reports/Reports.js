@@ -1,8 +1,8 @@
 import React from 'react'
-import { swrReportsToday } from '../swr/reportsToday'
+import { swrReportsToday } from '../../swr/reportsToday'
 import './styles.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { actions, setReportId } from '../store/features/reports'
+import { actions, setReportId } from '../../store/features/reports'
 
 function Reports() {
     const dispatch =useDispatch()
@@ -10,7 +10,7 @@ function Reports() {
     const { data ,isLoading } = swrReportsToday('المسائية')
     const setId=(id)=>{
       dispatch(setReportId(id))
-      dispatch(actions({action:'reportNav',data:'details'}))
+      dispatch(actions({action:'reportNav',data:'info'}))
 
     }
   if(data) return (
@@ -24,11 +24,10 @@ function Reports() {
     <div className=' px-2  whitespace-nowrap flex  text-xs    cursor-pointer text-black  bg-gray-20w0 font-semibold py-3 gap-x-2'>
     <div >{report.type}</div>
    
-    <div >على</div>
-    <div >{report.street_name}</div>
+    {/* <div >على</div> */}
+    {/* <div >{report.street_name}</div> */}
     <div >
-        الدورية المتوجهه
-        :
+     
         {report.nida}</div>
     </div>
     </label>

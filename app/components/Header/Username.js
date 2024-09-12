@@ -13,7 +13,7 @@ const openDrawer=()=>{
   return (
     <div className=' flex items-center gap-x-4 text-black text-sm font-semibold'>
         <Avatar onClick={openDrawer} size='sm' rounded/>
-        {/* <span>مرحــبا,  {name}  </span> */}
+        <span>مرحــبا,  {name}  </span>
     </div>
   )
 }

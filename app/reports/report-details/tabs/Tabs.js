@@ -1,14 +1,17 @@
 import { useDispatch, useSelector } from 'react-redux'
 import './styles.css'
 import { actions } from '@/app/store/features/reports'
-function Nav() {
+import { Button } from 'flowbite-react'
+import DeleteReportBtn from './DeleteReportBtn'
+import MoreInfo from './MoreInfo'
+function Tabs() {
     const dispatch=useDispatch()
     const currentNav=useSelector(state=>state.reports.reportNav)
 
     const data=[
         {
             title:'تفاصيل الحدث',
-            nav:'details',
+            nav:'info',
             icon:<svg className="w-4 h-4 fill-gray-800"  stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="200px" width="200px" xmlns="http://www.w3.org/2000/svg"><path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path></svg>
         },
         {
@@ -30,11 +33,11 @@ function Nav() {
 dispatch(actions({action:'reportNav',data:nav}))
 console.log(nav)
     }
-  return (
-    <div className=" text-xs font-semibold flex gap-x-4  to-gray-800">
+  return <div className='flex items-center '>
+     <div className=" flex-1 text-xs font-semibold flex gap-x-4  to-gray-800">
        {data.map(nav=>{
         return  <div key={nav.nav}  >
-        <input checked={currentNav==nav.nav?true:null} className='hidden report-nav' name='reports-nav' id={nav.nav} type="radio"/>
+        <input   checked={currentNav==nav.nav?true:null} className='hidden report-nav' name='reports-nav' id={nav.nav} type="radio"/>
         <label htmlFor={nav.nav}>
             <div onClick={()=>setNav(nav.nav)} className="flex cursor-pointer select-none items-center gap-x-2 w-fit  rournded-lg p-1">
                 {nav.icon}
@@ -44,7 +47,9 @@ console.log(nav)
     </div>
        })}
     </div>
-  )
+    {/* <DeleteReportBtn/> */}
+    <MoreInfo/>
+  </div>
 }
 
-export default Nav
+export default Tabs

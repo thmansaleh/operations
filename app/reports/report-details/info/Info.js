@@ -1,9 +1,9 @@
 import { swrReport } from "@/app/swr/report"
 import { Spinner } from "flowbite-react"
 import { useSelector } from "react-redux"
-import ReportLocation from "./ReportLocation"
+import ReportLocation from "../ReportLocation"
 
-function ReportDetails() {
+function Info() {
     const { data , error, isLoading,mutate } = swrReport()
   
 if(isLoading) return <div className="flex justify-center w-full items-center"><Spinner color="success" /></div>
@@ -68,4 +68,4 @@ if(data)  return <div className='bg-gray-1003  space-y-3 text-sm flex   font-sem
   
 }
 
-export default ReportDetails
+export default Info

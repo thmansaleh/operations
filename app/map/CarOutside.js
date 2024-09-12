@@ -1,10 +1,10 @@
 import { getDistanceFromCenter } from '../services/getDistanceFromCenter'
-import './styles.css'
 function CarOutside({point}) {
     const distance=getDistanceFromCenter(point.lat,point.lng,point.current_lat,point.current_lng)
 
-if(Number(distance)>1 & point.is_match)return  <div className="ripple-circle flex items-center justify-center">
-<span className="text-xs text-white">{point.nida}</span>
+if(Number(distance)>1 & point.is_match)return  <div className="bg-red-600 ripple-circle flex items-center justify-center">
+<span className="text-xs text-white">
+  {point.nida}</span>
 
 
 </div>

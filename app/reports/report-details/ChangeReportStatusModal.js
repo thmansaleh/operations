@@ -7,7 +7,7 @@ import { Button, Modal } from "flowbite-react";
 import { useState } from "react";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
 
-export default function ChangeReportStatusModal({button}) {
+export default function ChangeReportStatusModal() {
   const [openModal, setOpenModal] = useState(false);
   const { data , error, isLoading,mutate } = swrReport()
 
@@ -20,8 +20,10 @@ const changeStatus=async()=>{
 }
  if(data) return (
     <>
-   {!data.finish?<Button gradientMonochrome="success" size='xs' className="w-full mt-7" onClick={() => setOpenModal(true)}>
-    {button}
+    
+   {!data.finish?<Button gradientMonochrome="success" size='xs'  onClick={() => setOpenModal(true)}>
+   {        !data.start?'بدء الحدث':!data.arrive?'تغيير الحالة الى وصول':'انهاء الحدث'
+              }
       </Button>:null}
       <Modal show={openModal} size="md" onClose={() => setOpenModal(false)} popup>
         <Modal.Header />
@@ -29,7 +31,10 @@ const changeStatus=async()=>{
           <div className="text-center">
             <HiOutlineExclamationCircle className="mx-auto mb-4 h-14 w-14 text-gray-400 dark:text-gray-200" />
             <h3 className="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">
-                هل انت متأكد من {button} ؟
+              هل انت متأكد من   {' '}
+              {        !data.start?'بدء الحدث':!data.arrive?'تغيير الحالة الى وصول':'انهاء الحدث'
+              }
+                ؟
              
 
             </h3>

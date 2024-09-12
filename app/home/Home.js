@@ -3,9 +3,7 @@ import Cars from "./Cars"
 import Drivers from "./Drivers"
 import Mechanisms from "./Mechanisms"
 import ReportsCount from "./ReportsCount"
-import Sources from "./Sources"
-import Streets from "./Streets"
-import Types from "./Types"
+import Ratio from "./ratio/Ratio"
 
 function Home() {
   return <div className="p-5">
@@ -17,12 +15,7 @@ function Home() {
   
     </div>
 
-    <div className="flex justify-around border-2   py-5 rounded-lg">
-    <Streets/>
-    <Sources/>
-    <Types/>
-
-    </div>
+   <Ratio/>
   </div>
       
   

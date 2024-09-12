@@ -6,7 +6,7 @@ export default function Component() {
     const { data , error, isLoading,mutate } = swrReportImages()
 
   if(data) {
-    if (data.length===0) return <div className="flex items-center justify-center w-full pt-4">لاتوجد صور</div>
+    if (data.length===0) return <div className="flex items-center font-semibold text-sm justify-center w-full pt-4">لاتوجد صور</div>
 
    return <div className="h-64">
     

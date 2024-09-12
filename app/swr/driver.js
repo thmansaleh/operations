@@ -4,8 +4,6 @@ import axios from 'axios';
 
 import useSWR from 'swr'
 import { apiUrl } from '../constants';
-
-
 export  function swrDriver(id){
 
 //  const url =`https://express-rta.vercel.app/get-driver?id=${id}`

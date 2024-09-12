@@ -20,7 +20,7 @@ function ExportAsExcel() {
             <input className='hidden reports-filter' name='reports-filter' id='excel' type="radio"/>
             <label htmlFor='excel'>
                 <div 
-                    className="flex items-center gap-x-2 w-fit bg-gray-200 rounded-lg p-1" 
+                    className="flex items-center gap-x-2 w-fit  p-1" 
                     // onClick={handleExport}
                 >
                     <svg className="w-5 h-5 fill-blue-900" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="200px" width="200px" xmlns="http://www.w3.org/2000/svg">

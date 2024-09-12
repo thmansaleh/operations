@@ -7,14 +7,14 @@ import SingleRow from "./SingleRow";
 import SearchInput from "./SearchInput";
 
 export default function Table({drivers}){
-  const dispatch=useDispatch()
-  const currentDrivers=useSelector(state=>state.drivers.drivers)
-  useEffect(()=>{
-    dispatch(setCurrentDrivers(drivers))
-    return ()=>{
+  // const dispatch=useDispatch()
+  // const currentDrivers=useSelector(state=>state.drivers.drivers)
+  // useEffect(()=>{
+  //   dispatch(setCurrentDrivers(drivers))
+  //   return ()=>{
 
-    }
-  },[drivers])
+  //   }
+  // },[drivers])
 
   return <>
 <div className="container mx-auto px-4  custom-scroll overflow-auto h-screen sm:px-8">
@@ -48,7 +48,7 @@ export default function Table({drivers}){
           </thead>
           <tbody>
 
-            {currentDrivers.map((driver,index)=>{
+            {drivers.map((driver,index)=>{
                 return      <SingleRow key={driver.job_id} index={index+1} driver={driver}/>
 
             })}

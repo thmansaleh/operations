@@ -56,9 +56,8 @@ const Reports=()=>{
     const dispatch=useDispatch()
     const handleMapClick = (id) => {
 
-        console.log(id)
         dispatch(setReportId(id))
-        dispatch(actions({action:'reportNav',data:'details'}))
+        dispatch(actions({action:'reportNav',data:'info'}))
   
         dispatch(actions({action:'mapReportModal',data:true}))
         

@@ -8,15 +8,15 @@ function Filter() {
 
     const navs=[
         {
-            title:'الأحداث الأخيرة',
+            title:'أحداث غير منتهية ',
             nav:'last',
-            icon:<svg className="w-5 h-5 fill-gray-500" stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" height="200px" width="200px" xmlns="http://www.w3.org/2000/svg"><path fill="none" stroke-miterlimit="10" stroke-width="32" d="M256 64C150 64 64 150 64 256s86 192 192 192 192-86 192-192S362 64 256 64z"></path><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M256 128v144h96"></path></svg>
+            icon:   <svg  className="w-5 h-5 fill-gray-500" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="200px" width="200px" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z"></path><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm3.3 14.71L11 12.41V7h2v4.59l3.71 3.71-1.42 1.41z"></path></svg>
 
         },
         {
             title:'الأحداث اليومية',
             nav:'daily',
-            icon:<svg className="w-5 h-5 fill-gray-800" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="200px" width="200px" xmlns="http://www.w3.org/2000/svg"><g id="View_Timeline"><g><path d="M18.436,20.94H5.562a2.5,2.5,0,0,1-2.5-2.5V5.567a2.5,2.5,0,0,1,2.5-2.5H18.436a2.5,2.5,0,0,1,2.5,2.5V18.44A2.5,2.5,0,0,1,18.436,20.94ZM5.562,4.067a1.5,1.5,0,0,0-1.5,1.5V18.44a1.5,1.5,0,0,0,1.5,1.5H18.436a1.5,1.5,0,0,0,1.5-1.5V5.567a1.5,1.5,0,0,0-1.5-1.5Z"></path><path d="M6.544,8.287h0a.5.5,0,0,1,0-1H12a.5.5,0,0,1,0,1Z"></path><path d="M9.271,12.5h0a.5.5,0,0,1,0-1h5.454a.5.5,0,0,1,0,1Z"></path><path d="M12,16.724h0a.5.5,0,0,1,0-1h5.455a.5.5,0,0,1,0,1Z"></path></g></g></svg>
+            icon:<svg className="w-5 h-5 fill-gray-500" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="200px" width="200px" xmlns="http://www.w3.org/2000/svg"><path d="M48 82.7v346.7c0 19.1 15.5 34.7 34.7 34.7h346.7c19.1 0 34.7-15.5 34.7-34.7V82.7c0-19.1-15.5-34.7-34.7-34.7H82.7C63.5 48 48 63.5 48 82.7zm89.3 297.1c-13.1 1.7-24.1-9.3-22.4-22.4 1.1-8.9 8.3-16.1 17.2-17.2 13.1-1.7 24.1 9.3 22.4 22.4-1.1 8.9-8.3 16.1-17.2 17.2zm0-104c-13.1 1.7-24.1-9.3-22.4-22.4 1.1-8.9 8.3-16.1 17.2-17.2 13.1-1.7 24.1 9.3 22.4 22.4-1.1 8.9-8.3 16.1-17.2 17.2zm0-104c-13.1 1.7-24.1-9.3-22.4-22.4 1.1-8.9 8.3-16.1 17.2-17.2 13.1-1.7 24.1 9.3 22.4 22.4-1.1 8.9-8.3 16.1-17.2 17.2zM384.7 374h-180c-7.7 0-14-6.3-14-14s6.3-14 14-14h180c7.7 0 14 6.3 14 14s-6.3 14-14 14zm0-104h-180c-7.7 0-14-6.3-14-14s6.3-14 14-14h180c7.7 0 14 6.3 14 14s-6.3 14-14 14zm0-104h-180c-7.7 0-14-6.3-14-14s6.3-14 14-14h180c7.7 0 14 6.3 14 14s-6.3 14-14 14z"></path></svg>
         },
         // {
         //     title:'تصدير الأحداث',
@@ -28,12 +28,12 @@ function Filter() {
         const period =localStorage.getItem('period')
 
 const url =`${apiUrl}/get-reports-for-today?period=${period}`
-if(nav=='last'){
+if(nav=='daily'){
+    // const newData=data.filter(report=>report)
+    mutate(url)
+}else{
     const newData=data.filter(report=>!report.finish)
     mutate(url,newData,false)
-}else{
-    // const newData=data.filter(report=>!report.finish)
-    mutate(url,data,true)
 }
     }
   return (
@@ -42,7 +42,7 @@ if(nav=='last'){
         return  <div >
         <input defaultChecked={filter.nav=='last'?true:false} className='hidden reports-filter' name='reports-filter' id={filter.nav} type="radio"/>
         <label htmlFor={filter.nav}>
-            <div onClick={()=>setNav(filter.nav)} className="flex items-center gap-x-2 w-fit bg-gray-200 rounded-lg p-1">
+            <div onClick={()=>setNav(filter.nav)} className="flex items-center gap-x-2 w-fit   p-1">
                 {filter.icon}
 <div>{filter.title}</div>
             </div>

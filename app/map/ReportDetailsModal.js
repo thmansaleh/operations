@@ -34,7 +34,8 @@ export default function ReportDetailsModal() {
         </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button color="gray" onClick={() => setOpenModal(false)}>
+          <Button color="gray" onClick={()=>   dispatch(actions({action:'mapReportModal',data:false}))
+}>
             إغلاق
           </Button>
         </Modal.Footer>

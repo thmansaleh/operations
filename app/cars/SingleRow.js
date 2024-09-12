@@ -6,6 +6,7 @@ import Distance from './Distance'
 import RecoverIcon from './RecoveryIcon'
 import { getLocationName } from '../services/helpers/getLocationName'
 import { getTimePassedInArabic } from '../services/helpers/getTimePassedInArabic'
+import ReportsCount from './ReportsCount'
 
 function SingleRow({car}) {
   return (
@@ -26,6 +27,8 @@ function SingleRow({car}) {
       <td className=' text-green-500 font-semibold'>
         <Distance car={car}/>
       </td>
+      <td><ReportsCount nida={car.nida}/></td>
+
     </tr>
   )
 }

@@ -24,7 +24,7 @@ export default function login(){
     errorMsg.current.innerText=''
 loading.current.style.display='flex'
 
-    const response = await loginCheck(username,password)
+    const response = await loginCheck(username,password,period)
 
          if (response.auth) {
           

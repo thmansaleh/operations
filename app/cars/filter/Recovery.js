@@ -4,6 +4,8 @@ function Recovery() {
   const { data } = swrCars()
 if(data){
   const filter =data.filter(car=>  car.type=='recovery')
+
+
   return (
     <div className='flex  items-center gap-x-2'>
         <div>الكرينات</div>

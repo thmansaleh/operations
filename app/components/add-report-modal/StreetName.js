@@ -10,19 +10,21 @@ function StreetName() {
   const report =useSelector(state=>state.addReport)
 
 if(isLoading) return 'loading'
-
-return <div className="flex items-center gap-x-3  text-sm font-semibold">
-<div>الشارع</div>
+if(data)return <>
+<td className="py-4">
+الشارع
 :
-  <Select defaultValue={report.streetId}  onChange={e=>dispatch(addReport({action:'streetId',data:e.target.value}))} className=" w-fit" >
-  <option disabled className='text-sm' >الشارع</option>
+
+</td>
+<td className='px-4'><Select defaultValue={report.streetId}  onChange={e=>dispatch(addReport({action:'streetId',data:e.target.value}))} className="w-full focus:ring-gray-800 focus:border-gray-800" >
+  <option  ></option>
   {data.map(street=>{
   return <option className='text-sm' value={street.id} key={street.id}>{street.street_name} </option>
 })}
-</Select>
+</Select></td>
+</>
 
-</div>
-{/* <input  value={report.description} onChange={e=>dispatch(addReport({action:'description',data:e.target.value}))} type="text" className="focus:ring-gray-800 focus:border-gray-800 bg-gray-50 border border-gray-300 text-gray-900  rounded-lg   p-2.5  text-center" placeholder="الوصف" /> */}
+
 }
 
 export default StreetName

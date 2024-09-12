@@ -16,12 +16,13 @@ function Test( {cars}) {
       <th>اخر تحديث للموقع</th>
       {/* <th>اخر تحديث للموقع</th> */}
       <th>بعد الدورية عن التمركز</th>
+      <th>عدد البلاغات</th>
     </tr>
   </thead>
   <tbody className=' text-center'>
     
     {cars.sort((a,b)=>a.nida - b.nida).map(car=>{
-        return <SingleRow car={car}/>
+        return <SingleRow key={car.nida} car={car}/>
     })}
 
   </tbody>
