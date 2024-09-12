@@ -14,6 +14,7 @@ function MapContent() {
 
                <div className="h-screen w-full">
                 <Map 
+options={{ language: "ar" }}
                  defaultZoom={12}  
                  defaultCenter={position} 
                 //  onClick={handleMapClick}
