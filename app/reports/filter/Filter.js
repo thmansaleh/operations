@@ -37,7 +37,7 @@ if(nav=='daily'){
 }
     }
   return (
-    <div className=" text-xs font-semibold flex gap-x-4  to-gray-800">
+    <div className=" text-xs font-semibold flex gap-x-4  text-gray-500">
        {navs.map(filter=>{
         return  <div >
         <input defaultChecked={filter.nav=='last'?true:false} className='hidden reports-filter' name='reports-filter' id={filter.nav} type="radio"/>
