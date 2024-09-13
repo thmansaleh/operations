@@ -12,7 +12,7 @@ function Tracking() {
             console.log(loc)
             const data = await updatCarLocation(nida,loc.lat,loc.lng)
             // await getData(loc)
-            console.log(data)
+            // console.log(data)
             }
           });
       
