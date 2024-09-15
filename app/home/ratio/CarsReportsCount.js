@@ -1,8 +1,9 @@
 import { swrCarsReportsCount } from "@/app/swr/carsReportsCount"
+import { Spinner } from "flowbite-react"
 
 function CarsReportsCount() {
     const { data , error, isLoading } = swrCarsReportsCount()
-    if(isLoading) 'جاري التحميل'
+    if(isLoading) return <Spinner color="success" />
 
     if(data) return <div className="">
     <div className=" text-center flex items-center font-semibold text-sm justify-center gap-x-4 my-3">

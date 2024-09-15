@@ -1,9 +1,10 @@
+import { Spinner } from "flowbite-react"
 import { swrReportsToday } from "../swr/reportsToday"
 
 function Informations() {
   const {data,error,isLoading} = swrReportsToday()
 
-if(isLoading) return 'جاري التحميل'
+if(isLoading) return <Spinner color="success" />
   return (
 <div className="">
   {/* Card */}

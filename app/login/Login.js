@@ -2,7 +2,7 @@
 import { useRouter } from 'next/navigation'
 
 import { useState ,useRef} from 'react';
-import { Select } from 'flowbite-react';
+import { Button, Select } from 'flowbite-react';
 import { login  as loginCheck} from '../services/login';
 import { useDispatch } from 'react-redux';
 import account, { setAccount } from '../store/features/account';
@@ -89,7 +89,7 @@ return <section className="select-none bg-white ">
 
 
           <span ref={errorMsg}  className="text-sm text-red-600 my-2 inline-block "></span>
-          <button onClick={()=>login()} type="submit" className="w-full text-white bg-green-500   rounded-lg text-sm px-5 py-2.5 text-center ">تسجيل الدخول</button>
+          <Button gradientMonochrome="success" onClick={()=>login()} type="submit" className="w-full ">تسجيل الدخول</Button>
 
       </div>
     </div>

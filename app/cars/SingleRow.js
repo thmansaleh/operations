@@ -7,6 +7,7 @@ import RecoverIcon from './RecoveryIcon'
 import { getLocationName } from '../services/helpers/getLocationName'
 import { getTimePassedInArabic } from '../services/helpers/getTimePassedInArabic'
 import ReportsCount from './ReportsCount'
+import { isMoreThanMinuteAgo } from '../services/helpers/isMoreThanMinuteAgo'
 
 function SingleRow({car}) {
   return (
@@ -28,6 +29,10 @@ function SingleRow({car}) {
         <Distance car={car}/>
       </td>
       <td>{car.is_match?<ReportsCount nida={car.nida}/>:null}</td>
+      <td >{car.is_match?<div className='flex items-center justify-center gap-x-3'>
+        {isMoreThanMinuteAgo(car.last_update)?<div className=' text-gray-600'>غير متصل</div> :<div className=' to-green-600'> متصل</div>}
+        {isMoreThanMinuteAgo(car.last_update)?<div  className='w-2 h-2 rounded-full bg-gray-600'></div>:<div className='w-2 h-2 rounded-full bg-green-600'></div>}
+      </div>:null}</td>
 
     </tr>
   )

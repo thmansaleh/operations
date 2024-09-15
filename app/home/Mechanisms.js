@@ -1,10 +1,11 @@
+import { Spinner } from "flowbite-react"
 import { swrCars } from "../swr/cars"
 
 function Mechanisms() {
     
     const {data,error,isLoading} = swrCars()
 
-    if(isLoading) return 'loding'
+    if(isLoading) return <Spinner color="success" />
  if(data){
 const count =data.filter(e=>e.is_match& e.type!='patrol')
     

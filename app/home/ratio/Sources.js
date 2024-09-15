@@ -1,8 +1,9 @@
 import { swrSourcesReports } from "@/app/swr/sourcesReports"
+import { Spinner } from "flowbite-react"
 
 function Sources() {
     const { data , error, isLoading } = swrSourcesReports()
-    if(isLoading) 'جاري التحميل'
+    if(isLoading) return <Spinner color="success" />
       // return null
       if(data) return <div className=" ">
     <div className=" text-center flex items-center font-semibold text-sm justify-center gap-x-4 my-3">

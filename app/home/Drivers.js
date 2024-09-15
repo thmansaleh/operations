@@ -1,9 +1,10 @@
+import { Spinner } from "flowbite-react"
 import { swrDriversOnDuty } from "../swr/driversOnDuty"
 
 function Drivers() {
     
     const {data,error,isLoading} = swrDriversOnDuty()
-if(isLoading) return 'loooading'
+if(isLoading) return <Spinner color="success" />
     if(data)  return (
     <div className="flex items-center p-4 bg-white   gap-x-3    dark:bg-gray-800">
    <div className="p-3 mr-4 text-green-500 bg-green-100 rounded-full dark:text-green-100 dark:bg-green-500">

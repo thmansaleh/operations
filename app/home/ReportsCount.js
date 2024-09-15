@@ -1,9 +1,10 @@
+import { Spinner } from "flowbite-react"
 import { swrReportsToday } from "../swr/reportsToday"
 
 function ReportsCount() {
   const {data,error,isLoading} = swrReportsToday()
 
-if(isLoading) return 'جاري التحميل'
+if(isLoading) return <Spinner color="success" />
   return (
 
   <div className="flex items-center p-4 bg-white       gap-x-3    dark:bg-gray-800">
