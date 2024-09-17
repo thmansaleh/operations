@@ -18,7 +18,7 @@ function page() {
   
   return (
     <div>
-      {/* <ReportModl/> */}
+      <ReportModl/>
       <ReportDetailsModal/>
       <Filter/>
         <Map/>
