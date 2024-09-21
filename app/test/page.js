@@ -1,11 +1,13 @@
 'use client'
-import MapComponent from './Test'
+import SelectNida from './SelectNida'
 import TestMap from './TestMap'
 
 function page() {
   return <>
+  <div className='flex '>
+    <SelectNida/>
    <TestMap/>
-   {/* <MapComponent/> */}
+  </div>
   </>
 }
 

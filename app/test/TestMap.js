@@ -1,76 +1,17 @@
 "use client";
 
 import { GoogleMap, LoadScript, Polygon } from "@react-google-maps/api";
-import { useEffect } from "react";
+import { swrGetCarslatsAndLngs } from "../swr/getCarslatsAndLngs";
 
 function TestMap() {
   // const position = { lat: 25.179533, lng: 55.315357 };
   const position = { lat: 25.272372773356242, lng: 55.41707890308244 };
+  const { data ,isLoading } = swrGetCarslatsAndLngs()
 
 
-  // إحداثيات المضلع
-  const patrolAreaCoords11 = [
-    { lat: 25.290105258270977, lng: 55.425935797133896 },
-    { lat: 25.265131605891355, lng: 55.406392902470714 },
-    { lat: 25.25024989512297, lng: 55.40209573378945 },
-    { lat: 25.25024989512297, lng: 55.40209573378945 },
-    { lat: 25.250723543239033, lng: 55.4094273302148 },
-    { lat: 25.27630177947717, lng: 55.42395410623142 },
-    { lat: 25.286603847514172, lng: 55.430587108730705 },
-  ];
-  const patrolAreaCoords21 = [
-    { lat: 25.21212208025003, lng: 55.406185257527504 },
-    { lat: 25.208346191446857, lng: 55.401896992177406 },
-    { lat: 25.200266764819837, lng: 55.3978510068398 },
-    { lat: 25.18698683956878, lng: 55.39835003960557 },
-    { lat: 25.179858147911478, lng: 55.40316917986034 },
-    { lat: 25.177929136188162, lng: 55.40168636754185 },
-    { lat: 25.17591622183913, lng: 55.39742328212618 },
-    { lat: 25.163067592811377, lng: 55.39341939441215 },
-    { lat: 25.158664637717518, lng: 55.39500069210006 },
-    { lat: 25.156463720258845, lng: 55.391376420320654 },
-    { lat: 25.13448222881157, lng: 55.38110717612545 },
-    { lat: 25.125955070095305, lng: 55.37421459603925 },
-    { lat: 25.118215330078478, lng: 55.36827036437858 },
-    { lat: 25.103050837107734, lng: 55.38390986441912 },
-    { lat: 25.09987784888255, lng: 55.37720674364165 },
-    { lat: 25.173775754195646, lng: 55.31701700109013 },
-    { lat: 25.177952155734925, lng: 55.321631777072 },
-    { lat: 25.123935929954577, lng: 55.36586997555706 },
-    { lat: 25.130419139176254, lng: 55.37478126710825 },
-    { lat: 25.15543099058748, lng: 55.386795861757456 },
-    { lat: 25.18028893359191, lng: 55.394586032365794 },
-    { lat: 25.19841685859227, lng: 55.39556085820352 },
-    { lat: 25.213820547160516, lng: 55.40109600160791 },
-  ];
-  const patrolAreaCoords12 = [
-    { lat: 25.25329191312966, lng: 55.40323895702844 },
-    { lat: 25.234994137517933, lng: 55.40085431578413 },
-    { lat: 25.231488505904235, lng: 55.3941799725241 },
-    { lat: 25.234349560982523, lng: 55.386824850812324 },
-    { lat: 25.249051859421492, lng: 55.353871118887874 },
-    { lat: 25.246285407646248, lng: 55.35083503100895 },
-    { lat: 25.242264856693936, lng: 55.3608847420751 },
-    { lat: 25.241545697448174, lng: 55.366435694372825 },
-    { lat: 25.228417698850873, lng: 55.39474789021198 },
-    { lat: 25.229234079486268, lng: 55.40255330755768 },
-    { lat: 25.214674610969407, lng: 55.39910197607945 },
-    { lat: 25.21832572208278, lng: 55.37688392975989 },
-    { lat: 25.216853948788426, lng: 55.37691541464138 },
-    { lat: 25.215138304208192, lng: 55.37894821712302 },
-    { lat: 25.214419083992116, lng: 55.37978887176637 },
-    { lat: 25.21392424563849, lng: 55.38055011078062 },
-    { lat: 25.213478578903693, lng: 55.38165845852225 },
-    { lat: 25.213227890626932, lng: 55.38276680636151 },
-    { lat: 25.212497999283574, lng: 55.394642566552264 },
-    { lat: 25.21221840668521, lng: 55.39898507548709 },
-    { lat: 25.21213093706813, lng: 55.40656290052639 },
-    { lat: 25.230995846289087, lng: 55.40558572431321 },
-    { lat: 25.23375571246516, lng: 55.40711120955194 },
-    { lat: 25.25236346041123, lng: 55.40737272120939 },
-  ];
+ 
+ if(data) return <div className="flex-1">
 
-  return (
     <LoadScript
       googleMapsApiKey="AIzaSyD7e4cuSEMpIyLgiLM5skxZ7S6F9DXtggE"
       libraries={["geometry"]}
@@ -82,41 +23,25 @@ function TestMap() {
           zoom={12}
           mapTypeId="hybrid"
         >
-          {/* عرض المضلع على الخريطة */}
-          <Polygon
-            paths={patrolAreaCoords11}
+          {data.map(car=>{
+console.log(     JSON.parse(car.locations)
+)
+return   <Polygon
+            paths={JSON.parse(car.locations)}
             options={{
               fillColor: "green",
-              fillOpacity: 0.35,
+              fillOpacity: 0.50,
               strokeColor: "green",
               strokeOpacity: 0.8,
               strokeWeight: 2,
             }}
           />
-          <Polygon
-            paths={patrolAreaCoords12}
-            options={{
-              fillColor: "red",
-              fillOpacity: 0.35,
-              strokeColor: "red",
-              strokeOpacity: 0.8,
-              strokeWeight: 2,
-            }}
-          />
-          <Polygon
-            paths={patrolAreaCoords21}
-            options={{
-              fillColor: "yellow",
-              fillOpacity: 0.35,
-              strokeColor: "yellow",
-              strokeOpacity: 0.8,
-              strokeWeight: 2,
-            }}
-          />
+          })}
+         
         </GoogleMap>
       </div>
     </LoadScript>
-  );
+    </div>
 }
 
 export default TestMap;
