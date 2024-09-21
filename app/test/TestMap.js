@@ -2,10 +2,12 @@
 
 import { GoogleMap, LoadScript, Polygon } from "@react-google-maps/api";
 import { swrGetCarslatsAndLngs } from "../swr/getCarslatsAndLngs";
+import { useSelector } from "react-redux";
 
 function TestMap() {
   // const position = { lat: 25.179533, lng: 55.315357 };
-  const position = { lat: 25.272372773356242, lng: 55.41707890308244 };
+  const position = useSelector(state=>state.map.position)
+  // const position = { lat: 25.272372773356242, lng: 55.41707890308244 };
   const { data ,isLoading } = swrGetCarslatsAndLngs()
 
 

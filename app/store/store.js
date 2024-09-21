@@ -6,6 +6,7 @@ import account from './features/account';
 import addReport  from './features/addReport';
 import reports from './features/reports';
 import setting from './features/setting';
+import map from './features/map';
 const store = configureStore({
     reducer: {
         account: account,
@@ -14,6 +15,7 @@ const store = configureStore({
         reports:reports,
         addReport:addReport,
         setting:setting,
+        map:map,
     },
   });
   
