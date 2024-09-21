@@ -29,8 +29,8 @@ function TestMap() {
 return   <Polygon
             paths={JSON.parse(car.locations)}
             options={{
-              fillColor: "green",
-              fillOpacity: 0.50,
+              fillColor: "yellow",
+              fillOpacity: 0.30,
               strokeColor: "green",
               strokeOpacity: 0.8,
               strokeWeight: 2,
