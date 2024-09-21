@@ -6,7 +6,7 @@ import axios from 'axios'
 function SelectNida(nida) {
     const { data ,isLoading ,mutate} = swrGetCarslatsAndLngs()
     const setNida=(nida)=>{
-        const newData=data.filter(car=>car.nida==nida)
+        const newData=cars.filter(car=>car.nida==nida)
         // console.log(newData)
         mutate([...newData],false)
     }
