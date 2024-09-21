@@ -3,9 +3,10 @@ import { swrGetCarslatsAndLngs } from '../swr/getCarslatsAndLngs'
 
 function SelectNida(nida) {
     const { data ,isLoading ,mutate} = swrGetCarslatsAndLngs()
-    const setNida=()=>{
+    const setNida=(nida)=>{
         const newData=data.filter(car=>car.nida==nida)
-        mutate(newData,false)
+        // console.log(newData)
+        mutate([...newData],false)
     }
 
  if(data) return (

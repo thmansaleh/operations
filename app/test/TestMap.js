@@ -24,7 +24,7 @@ function TestMap() {
           mapTypeId="hybrid"
         >
           {data.map(car=>{
-console.log(     JSON.parse(car.locations)
+// console.log(     JSON.parse(car.locations)
 )
 return   <Polygon
             paths={JSON.parse(car.locations)}
